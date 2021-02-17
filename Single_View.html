@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single View</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <header></header>
+
+
+    <main>
+
+        <button>Tilbage</button>
+
+
+        <article class="drink">
+            <img src="" alt="" class="drinkBillede">
+            <h2 class="navn"></h2>
+            <p class="smag"></p>
+            <p class="ingredienser"></p>
+            <p class="fremgangsmåde"></p>
+        </article>
+
+    </main>
+
+
+
+
+
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const medieurl = "https://drinks-3b7b.restdb.io/media/";
+        const myHeaders = {
+
+            "x-apikey": "602d27ee5ad3610fb5bb619d"
+        }
+        let drink;
+
+
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", loadJSON);
+
+
+
+        async function loadJSON() {
+            const JSONData = await fetch(`https://drinks-3b7b.restdb.io/rest/dynamiskdrinks/${id}`, {
+                headers: myHeaders
+            });
+            drink = await JSONData.json();
+            console.log("drink", drink);
+            visDrink();
+        }
+
+
+
+        function visDrink() {
+            document.querySelector(".navn").textContent = drink.navn;
+            document.querySelector(".smag").textContent = drink.smag;
+            document.querySelector(".ingredienser").textContent = "Fra " + drink.ingredienser;
+            document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
+            /* document.querySelector(".drinkBillede").src = medieurl + drink.billede;
+             document.querySelector(".drinkBillede").alt = drink.navn;*/
+            document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
+        }
+
+        function tilbageTilRetOversigt() {
+            history.back();
+        }
+    </script>
+</body></html>

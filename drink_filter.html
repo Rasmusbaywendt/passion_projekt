@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="drink_filter_style.css">
+    <link rel="stylesheet" href="faelles_style.css">
+
+    <title>Udvalg</title>
+    <style>
+        img {
+            width: 100%;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 2em;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <header>
+        <nav>
+            <div id="menuKnap">☰</div>
+        </nav>
+    </header>
+
+
+    <main>
+        <h1>Drink</h1>
+
+        <nav>
+
+            <div id="menu" class="hidden">
+                <h3>Sortér efter:</h3>
+                <button data-sprit="alle" class="valgt">Alle</button>
+                <button data-sprit="vodka">vodka</button>
+                <button data-sprit="whiskey">whiskey</button>
+                <button data-sprit="gin">gin</button>
+
+            </div>
+        </nav>
+        <section id="liste">
+        </section>
+
+        <template>
+            <article class="drink">
+                <img src="" alt="" class="drinkBillede">
+                <h2 class="navn"></h2>
+                <p class="ingredienser"></p>
+                <p class="opskriftKnap"></p>
+            </article>
+        </template>
+
+    </main>
+
+
+
+    <footer>
+
+    </footer>
+
+    <script>
+        const header = document.querySelector("main h1");
+        const medieurl = "https://drinks-3b7b.restdb.io/media/";
+        const myHeaders = {
+
+            "x-apikey": "602d27ee5ad3610fb5bb619d"
+        }
+        document.addEventListener("DOMContentLoaded", start);
+        let drinks;
+        let filter = "alle";
+
+
+        // første funktion der kaldes efter DOM er loaded
+        function start() {
+
+            const filterKnapper = document.querySelectorAll("nav button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
+            loadJSON();
+        }
+
+
+        async function loadJSON() {
+            const JSONData = await fetch(" https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
+                headers: myHeaders
+            });
+            drinks = await JSONData.json();
+            console.log("drinks", drinks);
+            visDrinks();
+        }
+
+
+
+
+        function filtrerDrinks() {
+            filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit
+            console.log(filter);
+
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
+
+            visDrinks();
+            header.textContent = this.textContent;
+
+        }
+
+
+
+        function visDrinks() {
+
+            const dest = document.querySelector("#liste"); // container til articles med en person
+            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+
+            dest.textContent = ""; //Ryder container inden nyt loop
+
+            drinks.forEach(drink => {
+                // console.log("ret", ret.kategori);
+                if (filter == drink.sprit || filter == "alle") {
+                    // loop igennem json (personer)
+
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".navn").textContent = drink.navn;
+                    klon.querySelector(".ingredienser").textContent = `${drink.ingredienser}`;
+                    /*   klon.querySelector(".drinkBillede").src = medieurl + drink.billede[0];
+   klon.querySelector(".retBillede").alt = ret.billede;*/
+
+                    //kalder function visDetaljer
+                    klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
+                    dest.appendChild(klon);
+
+                }
+            })
+
+        }
+
+        function visDetaljer(drink) {
+
+            location.href = `Single_view.html?id=${drink._id}`;
+
+        }
+    </script>
+</body></html>
