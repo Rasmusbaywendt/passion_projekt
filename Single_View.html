@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single View</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="faelles_style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -15,12 +15,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
 <body>
 
 
-    <header></header>
+    <header>
+        <nav>
+            <div id="menuknap">☰</div>
+            <ul id="menu" class="hidden">
+                <li><a href=>Vodka</a></li>
+                <li><a href=>Whiskey</a></li>
+                <li><a href=>Gin</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
     <main>
@@ -86,8 +96,5 @@
         function tilbageTilRetOversigt() {
             history.back();
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
