@@ -57,6 +57,7 @@ button {
         position: fixed;
         right: 0;
         height: 100vh;
+        top: 5vh;
         background-color: #FCF5F2;
         display: flex;
         flex-direction: column;
@@ -69,5 +70,31 @@ button {
 
     a {
         color: #ffbc00;
+    }
+
+    .logo {
+        width: 30%;
+    }
+
+    .navnnav {
+        position: absolute;
+        top: 3vw;
+        left: 25vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    #menuknap {
+        display: none;
+    }
+
+    .logo {
+        width: 10%;
+    }
+
+    .navnnav {
+        position: absolute;
+        top: 1.5vw;
+        left: 8vw;
     }
 }
