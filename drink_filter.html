@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 
     <title>Udvalg</title>
 
@@ -25,7 +26,11 @@
 <body>
     <header>
         <nav>
-            <div id="menuKnap">☰</div>
+            <div id="menuknap">☰</div>
+            <ul id="burger" class="gone">
+                <li><a href=Forside.html>Forside</a></li>
+                <li><a href=drink_filter.html>Alle drinks</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -143,8 +148,5 @@
             location.href = `Single_view.html?id=${drink._id}`;
 
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
