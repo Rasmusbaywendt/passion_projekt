@@ -11,11 +11,20 @@ p {
     font-family: 'PT Sans Caption', sans-serif;
 }
 
+
 /**baggrundsfarve**/
 body {
     background-color: #fcf5f2
 }
 
+/**centrere drinknavn**/
 .navn {
     text-align: center;
+}
+
+/**filterknap design**/
+button {
+    border-radius: 25px;
+    border: none;
+    background-color: #baeadd
 }
