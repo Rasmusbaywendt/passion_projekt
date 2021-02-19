@@ -82,7 +82,6 @@
         let drinks;
         let filter = "alle";
 
-
         // første funktion der kaldes efter DOM er loaded
         function start() {
 
@@ -93,7 +92,7 @@
 
 
         async function loadJSON() {
-            const JSONData = await fetch(" https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
+            const JSONData = await fetch("https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
                 headers: myHeaders
             });
             drinks = await JSONData.json();
@@ -130,11 +129,12 @@
                 if (filter == drink.sprit || filter == "alle") {
                     // loop igennem json (personer)
 
+
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = drink.navn;
                     klon.querySelector(".ingredienser").textContent = `${drink.ingredienser}`;
-                    /*   klon.querySelector(".drinkBillede").src = medieurl + drink.billede[0];
-   klon.querySelector(".retBillede").alt = ret.billede;*/
+                    klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
+                    klon.querySelector(".drinkBillede").alt = drink.billeder;
 
                     //kalder function visDetaljer
                     klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
