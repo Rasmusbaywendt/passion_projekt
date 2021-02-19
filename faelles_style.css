@@ -1,0 +1,21 @@
+/** Fonte**/
+h1,
+h2 {
+    font-family: 'Squada One', cursive;
+    font-size: 30px;
+    color: #ffbc00
+}
+
+h3,
+p {
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+/**baggrundsfarve**/
+body {
+    background-color: #fcf5f2
+}
+
+.navn {
+    text-align: center;
+}

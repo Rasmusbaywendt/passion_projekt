@@ -12,6 +12,9 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
 
     <title>Udvalg</title>
     <style>
@@ -24,6 +27,7 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             grid-gap: 2em;
         }
+
     </style>
 </head>
 
@@ -38,16 +42,16 @@
 
 
     <main>
-        <h1>Drink</h1>
+        <h1>Drinks</h1>
 
         <nav>
 
             <div id="menu" class="hidden">
                 <h3>Sortér efter:</h3>
                 <button data-sprit="alle" class="valgt">Alle</button>
-                <button data-sprit="vodka">vodka</button>
-                <button data-sprit="whiskey">whiskey</button>
-                <button data-sprit="gin">gin</button>
+                <button data-sprit="vodka">Vodka</button>
+                <button data-sprit="whiskey">Whiskey</button>
+                <button data-sprit="gin">Gin</button>
 
             </div>
         </nav>
@@ -150,5 +154,8 @@
             location.href = `Single_view.html?id=${drink._id}`;
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
