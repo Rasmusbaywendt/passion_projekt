@@ -8,9 +8,9 @@ function sidenVises() {
 function toggleMenu() {
     console.log("toggleMenu")
 
-    document.querySelector("#menu").classList.toggle("hidden");
+    document.querySelector("#burger").classList.toggle("gone");
 
-    let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+    let erSkjult = document.querySelector("#burger").classList.contains("gone");
 
     if (erSkjult == true) {
         document.querySelector("#menuknap").textContent = "☰";

@@ -30,7 +30,7 @@ button {
     font-family: 'PT Sans Caption', sans-serif;
 }
 
-.hidden {
+.gone {
     opacity: 0;
     transform: translateX(-100%);
 }
@@ -42,7 +42,7 @@ button {
     top: 4vw;
 }
 
-#menu {
+#burger {
     list-style-type: none;
 }
 
@@ -53,7 +53,7 @@ button {
         height: 10vh;
     }
 
-    #menu {
+    #burger {
         position: fixed;
         right: 0;
         height: 100vh;
