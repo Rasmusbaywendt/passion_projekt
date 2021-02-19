@@ -26,5 +26,6 @@ body {
 button {
     border-radius: 25px;
     border: none;
-    background-color: #baeadd
+    background-color: #baeadd;
+    font-family: 'PT Sans Caption', sans-serif;
 }
