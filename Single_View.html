@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single View</title>
     <link rel="stylesheet" href="faelles_style.css">
+    <link rel="stylesheet" href="SingleView_Style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -16,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -38,14 +40,20 @@
 
 
         <article class="drink">
-            <img src="" alt="" class="drinkBillede">
-            <h2 class="navn"></h2>
-            <p class="smag"></p>
-            <p class="ingredienser"></p>
-            <p class="fremgangsmåde"></p>
+            <figure>
+                <img src="" alt="" class="drinkBillede">
+            </figure>
+            <div class="opskrift">
+                <h2 class="navn"></h2>
+                <p class="smag"></p>
+                <ul class="ingredienser"></ul>
+                <p class="fremgangsmåde"></p>
+            </div>
         </article>
 
     </main>
+
+
 
 
 
@@ -84,16 +92,22 @@
 
         function visDrink() {
             document.querySelector(".navn").textContent = drink.navn;
-            document.querySelector(".smag").textContent = drink.smag;
-            document.querySelector(".ingredienser").textContent = "Fra " + drink.ingredienser;
+            //document.querySelector(".smag").textContent = drink.smag;
+            drink.ingredienser.forEach(ting => {
+
+                document.querySelector(".ingredienser").innerHTML += "<li>" + ting + "</li>"
+            })
             document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
-            /* document.querySelector(".drinkBillede").src = medieurl + drink.billede;
-             document.querySelector(".drinkBillede").alt = drink.navn;*/
+            document.querySelector(".drinkBillede").src = medieurl + drink.billeder;
+            document.querySelector(".drinkBillede").alt = drink.navn;
             document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
         }
 
         function tilbageTilRetOversigt() {
             history.back();
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

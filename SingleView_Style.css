@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+article {
+    max-width: 90vw;
+    margin: auto;
+}
+figure {
+    width: 90%;
+    margin: auto;
+}
+.drinkBillede {
+    width: 100%;
+}
+@media (min-width: 800px) {
+    article {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .navn {
+        text-align: left;
+    }
+    .opskrift {
+        background-color: rgba(255, 255, 255, 0.37);
+        padding: 0vw 3vw 3vw 3vw;
+    }
+}
