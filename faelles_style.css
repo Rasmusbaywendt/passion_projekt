@@ -178,11 +178,9 @@ a {
         width: 20%;
     }
 
-<<<<<<< HEAD
-    <<<<<<< HEAD .links {
-=======
+
     .links {
->>>>>>> origin/master
+
         font-family: 'Squada One', cursive;
         font-size: 30px;
         position: absolute;
@@ -197,7 +195,7 @@ a {
         margin: 20px;
     }
 
-    =======
+
 
     /*footer*/
     .footerFarve {
@@ -240,10 +238,7 @@ a {
 
 
 
-<<<<<<< HEAD
-> > > > > > > footer
-=======
-
-> > > > > > > footer
+<<<<<<< HEAD > > > > > > > footer======= > > > > > > > footer
 }
->>>>>>> origin/master
+
+> > > > > > > origin/master
