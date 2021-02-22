@@ -138,7 +138,7 @@
 
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = drink.navn;
-                    klon.querySelector(".ingredienser").textContent = `${drink.ingredienser}`;
+                    klon.querySelector(".ingredienser").textContent = `${drink.keywords}`;
                     klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
                     klon.querySelector(".drinkBillede").alt = drink.billeder;
 
@@ -156,5 +156,8 @@
             location.href = `Single_view.html?id=${drink._id}`;
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
