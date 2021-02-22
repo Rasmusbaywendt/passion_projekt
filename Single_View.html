@@ -21,7 +21,6 @@
 </head>
 
 <body>
-    <div class="background"></div>
 
 
     <header>
@@ -42,6 +41,9 @@
 
 
     <main>
+        <div class="background_container">
+            <img src="images/baggrund.svg" alt="" class="background">
+        </div>
 
 
 
@@ -49,12 +51,12 @@
         <article class="drink">
             <figure>
                 <img src="" alt="" class="drinkBillede">
-                <div class="cutout"></div>
+                <img src="" alt="" class="cutout">
             </figure>
             <div class="opskrift">
                 <h2 class="navn"></h2>
                 <p class="smag"></p>
-                <p>Ingredienser:</p>
+                <p class="ingre">Ingredienser:</p>
                 <ul class="ingredienser"></ul>
                 <p class="fremgangsmåde"></p>
             </div>
@@ -111,6 +113,7 @@
             })
             document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
             document.querySelector(".drinkBillede").src = medieurl + drink.billeder;
+            document.querySelector(".cutout").src = medieurl + drink.billederCutout;
             document.querySelector(".drinkBillede").alt = drink.navn;
             document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
         }
