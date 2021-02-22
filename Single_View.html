@@ -69,6 +69,35 @@
 
     </main>
 
+    <div class="footerFarve">
+        <footer>
+            <div class="footerContainer">
+                <div class="footerIndhold">
+                    <article class="omOs">
+                        <h4>OM OS</h4>
+                        <ul>
+                            <li><a href="#">Teamet</a></li>
+                            <li><a href="#">Historien bag Drink Factory</a></li>
+                            <li><a href="#">Kontakt</a></li>
+                        </ul>
+                    </article>
+                    <article class="tips">
+                        <h4>TIPS OG TRICKS</h4>
+                        <ul>
+                            <li><a href="#">Sådan blander du en god drink</a></li>
+                            <li><a href="#">Bartenderens hemmeligheder</a></li>
+                            <li><a href="#">Redskaber der gør det nemmere</a></li>
+                        </ul>
+                    </article>
+                    <article class="story">
+                        <h4>DRINK FACTORY</h4>
+                        <p>Drink Factory tilbyder nemme opskrifter til klassiske, lækre drinks. Vi tilbyder en nem oversigt over diverse drinks samt en tydelig forklaring, så det bliver så nemt som muligt for dig, at skabe lige præcis den drink du har lyst til. </p>
+                    </article>
+                </div>
+
+            </div>
+            <p class="copyright">Drink Factory © 2020</p>
+        </footer>
 
 
 
@@ -78,50 +107,51 @@
 
 
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get("id");
 
-        const medieurl = "https://drinks-3b7b.restdb.io/media/";
-        const myHeaders = {
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get("id");
 
-            "x-apikey": "602d27ee5ad3610fb5bb619d"
-        }
-        let drink;
+            const medieurl = "https://drinks-3b7b.restdb.io/media/";
+            const myHeaders = {
 
-
-        console.log("ID", id);
-        document.addEventListener("DOMContentLoaded", loadJSON);
+                "x-apikey": "602d27ee5ad3610fb5bb619d"
+            }
+            let drink;
 
 
-
-        async function loadJSON() {
-            const JSONData = await fetch(`https://drinks-3b7b.restdb.io/rest/dynamiskdrinks/${id}`, {
-                headers: myHeaders
-            });
-            drink = await JSONData.json();
-            console.log("drink", drink);
-            visDrink();
-        }
+            console.log("ID", id);
+            document.addEventListener("DOMContentLoaded", loadJSON);
 
 
 
-        function visDrink() {
-            document.querySelector(".navn").textContent = drink.navn;
-            document.querySelector(".smag").textContent = drink.keywords;
-            drink.ingredienser.forEach(ting => {
+            async function loadJSON() {
+                const JSONData = await fetch(`https://drinks-3b7b.restdb.io/rest/dynamiskdrinks/${id}`, {
+                    headers: myHeaders
+                });
+                drink = await JSONData.json();
+                console.log("drink", drink);
+                visDrink();
+            }
 
-                document.querySelector(".ingredienser").innerHTML += "<li>" + ting + "</li>"
-            })
-            document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
-            document.querySelector(".drinkBillede").src = medieurl + drink.billeder;
-            document.querySelector(".cutout").src = medieurl + drink.billederCutout;
-            document.querySelector(".drinkBillede").alt = drink.navn;
-            document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
-        }
 
-        function tilbageTilRetOversigt() {
-            history.back();
-        }
-    </script>
+
+            function visDrink() {
+                document.querySelector(".navn").textContent = drink.navn;
+                document.querySelector(".smag").textContent = drink.keywords;
+                drink.ingredienser.forEach(ting => {
+
+                    document.querySelector(".ingredienser").innerHTML += "<li>" + ting + "</li>"
+                })
+                document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
+                document.querySelector(".drinkBillede").src = medieurl + drink.billeder;
+                document.querySelector(".cutout").src = medieurl + drink.billederCutout;
+                document.querySelector(".drinkBillede").alt = drink.navn;
+                document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
+            }
+
+            function tilbageTilRetOversigt() {
+                history.back();
+            }
+        </script>
 </body></html>
