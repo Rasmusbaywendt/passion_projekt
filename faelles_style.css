@@ -87,4 +87,18 @@ button {
         width: 20%;
     }
 
+    .links {
+        font-family: 'Squada One', cursive;
+        font-size: 30px;
+        position: absolute;
+        left: 70vw;
+        top: 9vh;
+
+
+    }
+
+    .links a {
+        color: #ffbc00;
+        margin: 20px;
+    }
 }
