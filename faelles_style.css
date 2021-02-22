@@ -65,6 +65,7 @@ a {
 .footerContainer {
     display: grid;
     grid-gap: 5px;
+    height: 40vh;
 
 
 }
@@ -79,12 +80,31 @@ a {
 
 }
 
-.indhold ul {
+
+.omOs ul {
     list-style: none;
+    padding-left: 0;
 
 }
 
-.indhold ul a {
+.omOs ul a {
+    color: inherit;
+    text-decoration: none;
+    font-family: 'PT Sans Caption', sans-serif;
+
+}
+
+.omOs ul a:hover {
+    opacity: 0.8;
+    color: #ffbc00
+}
+
+.tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tips ul a {
     color: inherit;
     text-decoration: none;
     font-family: 'PT Sans Caption', sans-serif;
@@ -92,10 +112,12 @@ a {
 
 }
 
-.indhold ul a:hover {
+.tips ul a:hover {
     opacity: 0.8;
     color: #ffbc00
 }
+
+
 
 .copyright {
     text-align: center;
@@ -135,9 +157,16 @@ a {
     }
 
 
+    .tips,
+    .story {
+        display: none;
 
-
+    }
 }
+
+
+
+
 
 @media (min-width: 1200px) {
     #menuknap {
@@ -149,7 +178,11 @@ a {
         width: 20%;
     }
 
+<<<<<<< HEAD
+    <<<<<<< HEAD .links {
+=======
     .links {
+>>>>>>> origin/master
         font-family: 'Squada One', cursive;
         font-size: 30px;
         position: absolute;
@@ -164,6 +197,7 @@ a {
         margin: 20px;
     }
 
+    =======
 
     /*footer*/
     .footerFarve {
@@ -172,7 +206,7 @@ a {
 
     .footerContainer {
         display: grid;
-        height: 100vh;
+        height: 40vh;
         grid-gap: 5px;
         grid-template-rows: 20% auto 100px;
 
@@ -182,42 +216,34 @@ a {
     .footerIndhold {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        grid-gap: 10px;
+        grid-gap: 15px;
         padding-left: 20%;
+        padding-top: 30px;
         line-height: 1.5;
         text-align: left;
     }
 
 
-}
 
-.indhold ul {
-    list-style: none;
-    padding-left: 0;
 
-}
 
-.indhold ul a {
-    color: inherit;
-    text-decoration: none;
-    font-family: 'PT Sans Caption', sans-serif;
 
-}
 
-.indhold ul a:hover {
-    opacity: 0.8;
-    color: #ffbc00
-}
 
-.copyright {
-    text-align: center;
-    opacity: 0.3;
-    font-size: 13px;
+    .copyright {
+        text-align: center;
+        opacity: 0.3;
+        font-size: 13px;
 
+    }
 }
 
 
 
+<<<<<<< HEAD
+> > > > > > > footer
+=======
 
 > > > > > > > footer
 }
+>>>>>>> origin/master
