@@ -75,115 +75,86 @@
 
 
 
-    <div class="footerFarve">
-        <footer>
-            <div class="footerContainer">
-                <div class="footerIndhold">
-                    <article class="omOs">
-                        <h4>OM OS</h4>
-                        <ul>
-                            <li><a href="#">Teamet</a></li>
-                            <li><a href="#">Historien bag Drink Factory</a></li>
-                            <li><a href="#">Kontakt</a></li>
-                        </ul>
-                    </article>
-                    <article class="tips">
-                        <h4>TIPS OG TRICKS</h4>
-                        <ul>
-                            <li><a href="#">Sådan blander du en god drink</a></li>
-                            <li><a href="#">Bartenderens hemmeligheder</a></li>
-                            <li><a href="#">Redskaber der gør det nemmere</a></li>
-                        </ul>
-                    </article>
-                    <article class="story">
-                        <h4>DRINK FACTORY</h4>
-                        <p>Drink Factory tilbyder nemme opskrifter til klassiske, lækre drinks. Vi tilbyder en nem oversigt over diverse drinks samt en tydelig forklaring, så det bliver så nemt som muligt for dig, at skabe lige præcis den drink du har lyst til. </p>
-                    </article>
-                </div>
-
-            </div>
-            <p class="copyright">Drink Factory © 2020</p>
-
-        </footer>
-
-        <script>
-            const header = document.querySelector("main h1");
-            const medieurl = "https://drinks-3b7b.restdb.io/media/";
-            const myHeaders = {
-
-                "x-apikey": "602d27ee5ad3610fb5bb619d"
-            }
-            document.addEventListener("DOMContentLoaded", start);
-            let drinks;
-            let filter = "alle";
-
-            // første funktion der kaldes efter DOM er loaded
-            function start() {
-
-                const filterKnapper = document.querySelectorAll("nav button");
-                filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
-                loadJSON();
-            }
 
 
-            async function loadJSON() {
-                const JSONData = await fetch("https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
-                    headers: myHeaders
-                });
-                drinks = await JSONData.json();
-                console.log("drinks", drinks);
-                visDrinks();
-            }
+    <script>
+        const header = document.querySelector("main h1");
+        const medieurl = "https://drinks-3b7b.restdb.io/media/";
+        const myHeaders = {
+
+            "x-apikey": "602d27ee5ad3610fb5bb619d"
+        }
+        document.addEventListener("DOMContentLoaded", start);
+        let drinks;
+        let filter = "alle";
+
+        // første funktion der kaldes efter DOM er loaded
+        function start() {
+
+            const filterKnapper = document.querySelectorAll("nav button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
+            loadJSON();
+        }
+
+
+        async function loadJSON() {
+            const JSONData = await fetch("https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
+                headers: myHeaders
+            });
+            drinks = await JSONData.json();
+            console.log("drinks", drinks);
+            visDrinks();
+        }
 
 
 
 
-            function filtrerDrinks() {
-                filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit
-                console.log(filter);
+        function filtrerDrinks() {
+            filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit
+            console.log(filter);
 
-                document.querySelector(".valgt").classList.remove("valgt");
-                this.classList.add("valgt");
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
 
-                visDrinks();
-                header.textContent = this.textContent;
+            visDrinks();
+            header.textContent = this.textContent;
 
-            }
-
-
-
-            function visDrinks() {
-
-                const dest = document.querySelector("#liste"); // container til articles med en person
-                const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
-
-                dest.textContent = ""; //Ryder container inden nyt loop
-
-                drinks.forEach(drink => {
-                    // console.log("ret", ret.kategori);
-                    if (filter == drink.sprit || filter == "alle") {
-                        // loop igennem json (personer)
+        }
 
 
-                        const klon = skabelon.cloneNode(true);
-                        klon.querySelector(".navn").textContent = drink.navn;
-                        klon.querySelector(".ingredienser").textContent = `${drink.keywords}`;
-                        klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
-                        klon.querySelector(".drinkBillede").alt = drink.billeder;
 
-                        //kalder function visDetaljer
-                        klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
-                        dest.appendChild(klon);
+        function visDrinks() {
 
-                    }
-                })
+            const dest = document.querySelector("#liste"); // container til articles med en person
+            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
 
-            }
+            dest.textContent = ""; //Ryder container inden nyt loop
 
-            function visDetaljer(drink) {
+            drinks.forEach(drink => {
+                // console.log("ret", ret.kategori);
+                if (filter == drink.sprit || filter == "alle") {
+                    // loop igennem json (personer)
 
-                location.href = `Single_view.html?id=${drink._id}`;
 
-            }
-        </script>
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".navn").textContent = drink.navn;
+                    klon.querySelector(".ingredienser").textContent = `${drink.keywords}`;
+                    klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
+                    klon.querySelector(".drinkBillede").alt = drink.billeder;
+
+                    //kalder function visDetaljer
+                    klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
+                    dest.appendChild(klon);
+
+                }
+            })
+
+        }
+
+        function visDetaljer(drink) {
+
+            location.href = `Single_view.html?id=${drink._id}`;
+
+        }
+    </script>
 </body></html>
