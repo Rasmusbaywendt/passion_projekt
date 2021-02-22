@@ -26,9 +26,10 @@ body {
 /**filterknap design**/
 button {
     border-radius: 25px;
-    border: none;
+    border: solid 1px #baeadd;
     background-color: #baeadd;
     font-family: 'PT Sans Caption', sans-serif;
+    cursor: pointer;
 }
 
 .gone {

@@ -50,11 +50,13 @@
 
             <div id="menu" class="hidden">
                 <h3>Sortér efter:</h3>
-                <button data-sprit="alle" class="valgt">Alle</button>
-                <button data-sprit="vodka">Vodka</button>
-                <button data-sprit="whiskey">Whiskey</button>
-                <button data-sprit="gin">Gin</button>
-                <button data-sprit="tequila">Tequila</button>
+                <div class="filterValg">
+                    <button data-sprit="alle" class="valgt">Alle</button>
+                    <button data-sprit="vodka">Vodka</button>
+                    <button data-sprit="whiskey">Whiskey</button>
+                    <button data-sprit="gin">Gin</button>
+                    <button data-sprit="tequila">Tequila</button>
+                </div>
 
             </div>
         </nav>
@@ -67,6 +69,9 @@
                 <h2 class="navn"></h2>
                 <p class="ingredienser"></p>
                 <p class="opskriftKnap"></p>
+                <button class="laesMere">
+                    <h3>Find opskrift</h3>
+                </button>
             </article>
         </template>
 
