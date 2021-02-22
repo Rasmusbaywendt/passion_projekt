@@ -177,7 +177,11 @@ a {
         width: 20%;
     }
 
+<<<<<<< HEAD
     <<<<<<< HEAD .links {
+=======
+    .links {
+>>>>>>> origin/master
         font-family: 'Squada One', cursive;
         font-size: 30px;
         position: absolute;
@@ -235,4 +239,10 @@ a {
 
 
 
+<<<<<<< HEAD
 > > > > > > > footer
+=======
+
+> > > > > > > footer
+}
+>>>>>>> origin/master
