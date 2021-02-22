@@ -46,6 +46,55 @@ button {
     list-style-type: none;
 }
 
+/*footer*/
+
+.footerFarve {
+    background-color: rgba(186, 234, 221, 0.28);
+    padding-bottom: 5px;
+}
+
+.footerContainer {
+    display: grid;
+    grid-gap: 5px;
+
+
+}
+
+.footerIndhold {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 5px;
+    text-align: center;
+    line-height: 1.5;
+
+
+}
+
+.indhold ul {
+    list-style: none;
+
+}
+
+.indhold ul a {
+    color: inherit;
+    text-decoration: none;
+    font-family: 'PT Sans Caption', sans-serif;
+
+
+}
+
+.indhold ul a:hover {
+    opacity: 0.8;
+    color: #ffbc00
+}
+
+.copyright {
+    text-align: center;
+    opacity: 0.3;
+    font-size: 13px;
+
+}
+
 @media (max-width: 800px) {
 
     nav {
@@ -76,6 +125,9 @@ button {
         width: 50%;
     }
 
+
+
+
 }
 
 @media (min-width: 1200px) {
@@ -86,5 +138,61 @@ button {
     .logo {
         width: 20%;
     }
+
+
+
+    /*footer*/
+    .footerFarve {
+        padding-top: 10vw;
+    }
+
+    .footerContainer {
+        display: grid;
+        height: 100vh;
+        grid-gap: 5px;
+        grid-template-rows: 20% auto 100px;
+
+
+    }
+
+    .footerIndhold {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 10px;
+        padding-left: 20%;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+
+}
+
+.indhold ul {
+    list-style: none;
+    padding-left: 0;
+
+}
+
+.indhold ul a {
+    color: inherit;
+    text-decoration: none;
+    font-family: 'PT Sans Caption', sans-serif;
+
+}
+
+.indhold ul a:hover {
+    opacity: 0.8;
+    color: #ffbc00
+}
+
+.copyright {
+    text-align: center;
+    opacity: 0.3;
+    font-size: 13px;
+
+}
+
+
+
 
 }
