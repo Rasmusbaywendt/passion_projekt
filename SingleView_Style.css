@@ -72,6 +72,10 @@ button {
         z-index: 1;
     }
 
+    nav {
+        background-color: #941D1F;
+    }
+
     .navn {
         text-align: left;
         font-size: 3rem;
