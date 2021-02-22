@@ -14,7 +14,9 @@ function toggleMenu() {
 
     if (erSkjult == true) {
         document.querySelector("#menuknap").textContent = "☰";
+        document.querySelector("body").classList.remove("fixed");
     } else {
         document.querySelector("#menuknap").textContent = "╳";
+        document.querySelector("body").classList.add("fixed");
     }
 }
