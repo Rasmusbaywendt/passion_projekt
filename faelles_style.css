@@ -73,14 +73,9 @@ button {
     }
 
     .logo {
-        width: 30%;
+        width: 50%;
     }
 
-    .navnnav {
-        position: absolute;
-        top: 3vw;
-        left: 25vw;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -89,12 +84,7 @@ button {
     }
 
     .logo {
-        width: 10%;
+        width: 20%;
     }
 
-    .navnnav {
-        position: absolute;
-        top: 1.5vw;
-        left: 8vw;
-    }
 }
