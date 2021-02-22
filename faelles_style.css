@@ -7,6 +7,7 @@ h2 {
 }
 
 h3,
+h4,
 p {
     font-family: 'PT Sans Caption', sans-serif;
 }
@@ -49,7 +50,7 @@ button {
 /*footer*/
 
 .footerFarve {
-    background-color: rgba(186, 234, 221, 0.28);
+    background-color: /*rgba(186, 234, 221, 0.28);*/ rgba(255, 188, 0, 0.11);
     padding-bottom: 5px;
 }
 
