@@ -79,27 +79,38 @@
 
 
     <script>
+        //Vi henter i id'et ud og gørr det til en konstant
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
 
+        //Vi angiver de informationer vi skal brug for at hive
+        //info ned fra Restdb som konstanter
         const medieurl = "https://drinks-3b7b.restdb.io/media/";
         const myHeaders = {
 
             "x-apikey": "602d27ee5ad3610fb5bb619d"
         }
+
+        //Vi laver variablen drink som vi vil kalde vores JSON info
+        //når vi får hentet det ned og logger derefter id'et i console
         let drink;
-
-
         console.log("ID", id);
+
+        //Vi tjekker at alt er loadet før vi kalder den første function
         document.addEventListener("DOMContentLoaded", loadJSON);
 
 
 
         async function loadJSON() {
+
+            //Vi laver en promise chain og tildeler den JSON data vi
+            //henter til variablen drink
             const JSONData = await fetch(`https://drinks-3b7b.restdb.io/rest/dynamiskdrinks/${id}`, {
                 headers: myHeaders
             });
             drink = await JSONData.json();
+
+            //Vi udskriver det i console før vi kalder den næste function
             console.log("drink", drink);
             visDrink();
         }
@@ -107,20 +118,31 @@
 
 
         function visDrink() {
+
+            //Vi tager informationerne og putter dem ind i vores DOM
             document.querySelector(".navn").textContent = drink.navn;
             document.querySelector(".smag").textContent = drink.keywords;
+
+            //Ingredienserne som vi gerne vil have som en liste putter
+            //vi ind med et loop så de hver især bliver tilføjet
+            //med tilhørende li tags
             drink.ingredienser.forEach(ting => {
 
                 document.querySelector(".ingredienser").innerHTML += "<li>" + ting + "</li>"
             })
+
+            //For billederne bruger vi medie URL'en til at tilføje med
             document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
             document.querySelector(".drinkBillede").src = medieurl + drink.billeder;
             document.querySelector(".cutout").src = medieurl + drink.billederCutout;
             document.querySelector(".drinkBillede").alt = drink.navn;
+
+            //Her tilfører vi vores tilbage knap en Eventlistener
             document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
         }
 
         function tilbageTilRetOversigt() {
+            //ved click på tilbage knappen kommer man tilbage til forrige side
             history.back();
         }
     </script>
