@@ -1,10 +1,53 @@
+/*Desktop*/
+
 button {
     width: 200px;
     height: 50px;
     font-size: 1.5rem;
 }
-
 button a {
     color: black;
     text-decoration: none;
+}
+.splash_wrapper {
+    display: grid;
+    max-width: 100%;
+    margin: auto;
+    justify-content: center;
+    overflow: hidden;
+}
+.splash_wrapper img {
+    grid-area: 1/1;
+    place-self: center;
+    width: 100%;
+}
+.splash_wrapper h1 {
+    grid-area: 1/1;
+    place-self: center;
+    background-color: rgba(252, 239, 215, 0.7);
+    font-size: 8vw;
+    border-radius: 20px;
+    color: #373737;
+    padding: 8vw;
+}
+.splash_wrapper button {
+    grid-area: 1/1;
+    place-self: center;
+    margin-top: 200px;
+}
+@media (max-width: 900px) {
+    .splash_wrapper img {
+        grid-area: 1/1;
+        place-self: center;
+        width: 180%;
+    }
+    button {
+        width: 100px;
+        height: 25px;
+        font-size: 0.75rem;
+    }
+    .splash_wrapper button {
+        grid-area: 1/1;
+        place-self: center;
+    }
 }
