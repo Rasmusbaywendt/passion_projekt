@@ -71,7 +71,7 @@ a:hover {
 .footerFarve {
     background-color:
         /*rgba(186, 234, 221, 0.28);*/
-        rgba(255, 188, 0, 0.11);
+        rgba(250, 224, 149, 0.17);
     padding-bottom: 5px;
 
 }
@@ -100,6 +100,7 @@ a:hover {
 
 .omOs {
     display: block;
+    background: none;
 
 
 }
@@ -315,6 +316,7 @@ nav {
             text-align: left;
             padding-top: 20px;
 
+
         }
 
 
@@ -330,6 +332,7 @@ nav {
         .tips,
         .story {
             box-shadow: none;
+            background: none;
 
         }
 
