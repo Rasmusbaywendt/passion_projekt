@@ -29,11 +29,15 @@
             <div class="logo">
                 <a href="index.html"><img src="images/logomedtekst.svg" alt="Logo"></a>
             </div>
+
+            <!-- Nav menu -->
             <div class="links">
                 <a href="index.html">Forside</a>
                 <a href="drink_filter.html">Opskrifter</a>
                 <a href="">Mit barskab</a>
             </div>
+
+            <!-- Burger nav menu der kun vises i mobil version -->
             <div id="menuknap">☰</div>
             <ul id="burger" class="gone">
                 <li><a href=index.html>Forside</a></li>
@@ -56,9 +60,10 @@
                 <h1>Alle drinks</h1>
 
                 <nav>
-
                     <div id="menu" class="hidden">
                         <h3>Sortér efter:</h3>
+
+                        <!-- Filtreringsknapper med data attributter -->
                         <div class="filterValg">
                             <button data-sprit="alle" class="valgt">Alle</button>
                             <button data-sprit="vodka">Vodka</button>
@@ -66,12 +71,14 @@
                             <button data-sprit="gin">Gin</button>
                             <button data-sprit="tequila">Tequila</button>
                         </div>
-
                     </div>
                 </nav>
+
+
                 <section id="liste">
                 </section>
 
+                <!-- HTML skabalon for de forskellige dirnks man kan vælge -->
                 <template>
                     <article class="drink">
                         <img src="" alt="" class="drinkBillede">
@@ -128,45 +135,63 @@
 
 
     <script>
+        // Vi deffinere en header for vores nav, så vi kan udskrive tekst i den senere
+        // Vi angiver de informationer vi skal brug for at hive
+        //info ned fra Restdb som konstanter
         const header = document.querySelector("main h1");
         const medieurl = "https://drinks-3b7b.restdb.io/media/";
         const myHeaders = {
 
             "x-apikey": "602d27ee5ad3610fb5bb619d"
         }
+
+        //Vi tjekker at alt er loadet før vi kalder den første function
         document.addEventListener("DOMContentLoaded", start);
+
+        //Vi laver variablen drink som vi vil kalde vores JSON info når vi får hentet det ned og logger derefter id'et i console
         let drinks;
         let filter = "alle";
 
         // første funktion der kaldes efter DOM er loaded
         function start() {
 
+            // Vi deffinere vores filterknapper
             const filterKnapper = document.querySelectorAll("nav button");
+            // Hver knap giver vi en eventlistener, samt kalder function loadJSON
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
             loadJSON();
         }
 
 
+
         async function loadJSON() {
+
+            //??????????????????????????????????????????????????
             const JSONData = await fetch("https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
                 headers: myHeaders
             });
             drinks = await JSONData.json();
+
+            //Vi udskriver det i console før vi kalder den næste function
             console.log("drinks", drinks);
             visDrinks();
         }
 
 
 
-
+        // Bliver kaldt når en filterknap klikkes på
         function filtrerDrinks() {
-            filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit
+            // Giver filter værdi/navn ud data-sprit attribut i html filter-nav
+            filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit og console logger filter
             console.log(filter);
 
+            // Fjerner class valgt, for efter at place valgt på den valgte filterknap
             document.querySelector(".valgt").classList.remove("valgt");
             this.classList.add("valgt");
 
+            // Kalder function visDrink
             visDrinks();
+            // Udskriver filterknap-indhold i header(h1)
             header.textContent = this.textContent;
 
         }
@@ -175,25 +200,37 @@
 
         function visDrinks() {
 
-            const dest = document.querySelector("#liste"); // container til articles med en person
-            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+            // container til articles med en drinks
+            const dest = document.querySelector("#liste");
 
-            dest.textContent = ""; //Ryder container inden nyt loop
+            // Deffinere html skabelon (article)
+            const skabelon = document.querySelector("template").content;
 
+            //Ryder container inden nyt loop
+            dest.textContent = "";
+
+
+            // For hver drink:
             drinks.forEach(drink => {
-                // console.log("ret", ret.kategori);
+
+                // If-sætning bestemmer Hvad den skal filtrere efter. Eller om den skal filtrere
                 if (filter == drink.sprit || filter == "alle") {
-                    // loop igennem json (personer)
 
 
+                    // loop igennem JSON (drinks)
+                    // Kloner skabalon og udskriver indhold til de foskellige html elementer
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = drink.navn;
                     klon.querySelector(".ingredienser").textContent = `${drink.keywords}`;
+                    // Til billed bruger vi medie URL'en
+                    // 0 betyder at kan skal tage fra nr 0 i arrey'et. et arrey starter pr default fra 0
                     klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
                     klon.querySelector(".drinkBillede").alt = drink.billeder;
 
-                    //kalder function visDetaljer
+                    // Ved click kalder function visDetaljer
                     klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
+
+                    //???????????????????????????????
                     dest.appendChild(klon);
 
                 }
@@ -202,7 +239,7 @@
         }
 
         function visDetaljer(drink) {
-
+            // Går til single view og udskrifer den valgte drinks id i single_view's url
             location.href = `Single_view.html?id=${drink._id}`;
 
         }
