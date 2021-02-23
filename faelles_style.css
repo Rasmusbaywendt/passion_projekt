@@ -21,7 +21,6 @@ p {
 body {
     background-color: #fcf5f2;
     margin: 0;
-    <<<<<<< HEAD======= > > > > > > > origin/master
 }
 
 /**centrere drinknavn**/
@@ -254,10 +253,6 @@ nav {
         line-height: 1.5;
         text-align: left;
         padding-top: 20px;
-
-
-
-
     }
 
 
@@ -290,6 +285,11 @@ nav {
         color: #ffbc00
     }
 
+    #menuknap {
+        display: none;
+    }
+
+
     @media (min-width: 1200px) {}
 
 
@@ -304,10 +304,6 @@ nav {
             height: 40vh;
             grid-gap: 5px;
             grid-template-rows: 20% auto 100px;
-
-
-
-
         }
 
         .footerIndhold {
@@ -318,10 +314,6 @@ nav {
             line-height: 1.5;
             text-align: left;
             padding-top: 20px;
-
-
-
-
 
         }
 
@@ -393,11 +385,6 @@ nav {
         .tips {
             display: block;
 
-        }
-
-
-        #menuknap {
-            display: none;
         }
 
     }
