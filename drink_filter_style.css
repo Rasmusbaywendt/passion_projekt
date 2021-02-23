@@ -35,11 +35,12 @@ p {
     padding-top: 4px;
 }
 
-article {
+main article {
     margin: 1vw;
     box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.39);
     display: grid;
     background-color: #FFAF34;
+    transition: 0.5s;
 }
 
 article .tekstboks {
@@ -47,7 +48,17 @@ article .tekstboks {
     display: grid;
 }
 
+main article:hover {
+    transform: scale(1.08);
+}
 
+main article button {
+    transition: 0.5s;
+}
+
+main article button:hover {
+    transform: scale(1.2);
+}
 
 .laesMere {
     margin-left: auto;

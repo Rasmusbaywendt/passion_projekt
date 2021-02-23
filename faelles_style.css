@@ -80,9 +80,7 @@ a:hover {
     display: grid;
     grid-gap: 5px;
     height: 20vh;
-    margin-top: 30px;
-
-
+    margin-top: 150px;
 }
 
 .footerIndhold {
@@ -289,6 +287,7 @@ nav {
     #menuknap {
         display: none;
     }
+
 
 
     @media (min-width: 1200px) {}
