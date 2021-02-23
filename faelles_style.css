@@ -19,7 +19,8 @@ p {
 
 /**baggrundsfarve**/
 body {
-    background-color: #fcf5f2
+    background-color: #fcf5f2;
+
 }
 
 /**centrere drinknavn**/
@@ -64,12 +65,14 @@ a {
         /*rgba(186, 234, 221, 0.28);*/
         rgba(255, 188, 0, 0.11);
     padding-bottom: 5px;
+
 }
 
 .footerContainer {
     display: grid;
     grid-gap: 5px;
-    height: 40vh;
+    height: 20vh;
+    margin-top: 30px;
 
 
 }
@@ -80,7 +83,15 @@ a {
     grid-gap: 5px;
     text-align: center;
     line-height: 1.5;
+    margin: auto;
 
+
+
+
+}
+
+.omOs {
+    display: block;
 
 
 }
@@ -110,22 +121,10 @@ a {
     color: #ffbc00
 }
 
-.tips ul {
-    list-style: none;
-    padding: 0;
-}
 
-.tips ul a {
-    color: inherit;
-    text-decoration: none;
-    font-family: 'PT Sans Caption', sans-serif;
-
-
-}
-
-.tips ul a:hover {
-    opacity: 0.8;
-    color: #ffbc00
+.tips,
+.story {
+    display: none;
 }
 
 
@@ -167,26 +166,63 @@ a {
         width: 50%;
     }
 
+}
 
-    .tips,
-    .story {
-        display: none;
 
-    }
-
+@media(min-width:801px) {
     .footerContainer {
         display: grid;
+        height: 40vh;
         grid-gap: 5px;
-        height: 30vh;
+        grid-template-rows: 20% auto 100px;
+
 
 
     }
 
     .footerIndhold {
-        padding-top: 5%;
-    }
-}
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 15px;
+        line-height: 1.5;
+        text-align: left;
+        padding-top: 20px;
 
+
+
+    }
+
+
+    .tips,
+    .story {
+        display: block;
+
+    }
+
+    .story p {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .tips ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .tips ul a {
+        color: inherit;
+        text-decoration: none;
+        font-family: 'PT Sans Caption', sans-serif;
+
+
+    }
+
+    .tips ul a:hover {
+        opacity: 0.8;
+        color: #ffbc00
+    }
+
+}
 
 
 
@@ -228,19 +264,24 @@ a {
         grid-template-rows: 20% auto 100px;
 
 
+
+
     }
 
     .footerIndhold {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         grid-gap: 15px;
-        padding-left: 20%;
+        padding-left: 18%;
         line-height: 1.5;
         text-align: left;
         padding-top: 20px;
+
+
+
+
+
     }
-
-
 
 
     .copyright {
@@ -250,11 +291,70 @@ a {
 
     }
 
+
+    .omOs,
+    .tips,
+    .story {
+        box-shadow: none;
+
+
+
+
+
+    }
+
+
+    .omOs ul {
+        list-style: none;
+        padding-left: 0;
+
+    }
+
+    .omOs ul a {
+        color: inherit;
+        text-decoration: none;
+        font-family: 'PT Sans Caption', sans-serif;
+
+    }
+
+    .omOs ul a:hover {
+        opacity: 0.8;
+        color: #ffbc00
+    }
+
+    .tips ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .tips ul a {
+        color: inherit;
+        text-decoration: none;
+        font-family: 'PT Sans Caption', sans-serif;
+
+
+    }
+
+    .tips ul a:hover {
+        opacity: 0.8;
+        color: #ffbc00
+    }
+
+    .story {
+        display: block;
+    }
+
+
     .story p {
         text-align: left;
         padding-top: 0;
     }
 
+    .omOs,
+    .tips {
+        display: block;
+
+    }
 
 }
 
