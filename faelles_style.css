@@ -85,6 +85,12 @@ a {
 
 }
 
+.omOs,
+.tips,
+.story {
+    box-shadow: none;
+}
+
 
 .omOs ul {
     list-style: none;
@@ -243,6 +249,13 @@ a {
         font-size: 13px;
 
     }
+
+    .story p {
+        text-align: left;
+        padding-top: 0;
+    }
+
+
 }
 
 
