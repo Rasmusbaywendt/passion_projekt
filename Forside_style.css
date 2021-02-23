@@ -1,5 +1,8 @@
 /*Desktop*/
 
+body {
+    background-color: rgb(148, 29, 29);
+}
 button {
     width: 200px;
     height: 50px;
