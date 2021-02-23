@@ -9,6 +9,10 @@ img {
     text-align: center;
 }
 
+#second_section nav {
+    height: auto;
+}
+
 main h1 {
     text-align: center;
     font-size: 3rem;
