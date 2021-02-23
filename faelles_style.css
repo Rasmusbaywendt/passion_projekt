@@ -21,10 +21,7 @@ p {
 body {
     background-color: #fcf5f2;
     margin: 0;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
+    <<<<<<< HEAD======= > > > > > > > origin/master
 }
 
 /**centrere drinknavn**/
@@ -176,9 +173,7 @@ nav {
     height: 175px;
 }
 
-<<<<<<< HEAD
-=======
-
+<<<<<<< HEAD=======
 /*-----------kasper kigger på burger------------*/
 
 
@@ -206,7 +201,8 @@ nav {
     height: 175px;
 }
 
->>>>>>> origin/master
+> > > > > > > origin/master
+
 /*------------------Media KUN for burger-------------------------*/
 @media (max-width: 800px) {
 
@@ -260,7 +256,7 @@ nav {
         padding-top: 20px;
 
 
-<<<<<<< HEAD
+
 
     }
 
@@ -293,118 +289,115 @@ nav {
         opacity: 0.8;
         color: #ffbc00
     }
-=======
-@media (min-width: 1200px) {
->>>>>>> origin/master
 
-}
+    @media (min-width: 1200px) {}
 
 
-@media (min-width: 1200px) {
+    @media (min-width: 1200px) {
 
 
 
-    /*footer*/
+        /*footer*/
 
-    .footerContainer {
-        display: grid;
-        height: 40vh;
-        grid-gap: 5px;
-        grid-template-rows: 20% auto 100px;
+        .footerContainer {
+            display: grid;
+            height: 40vh;
+            grid-gap: 5px;
+            grid-template-rows: 20% auto 100px;
 
 
 
+
+        }
+
+        .footerIndhold {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 15px;
+            padding-left: 18%;
+            line-height: 1.5;
+            text-align: left;
+            padding-top: 20px;
+
+
+
+
+
+        }
+
+
+        .copyright {
+            text-align: center;
+            opacity: 0.3;
+            font-size: 13px;
+
+        }
+
+
+        .omOs,
+        .tips,
+        .story {
+            box-shadow: none;
+
+        }
+
+
+        .omOs ul {
+            list-style: none;
+            padding-left: 0;
+
+        }
+
+        .omOs ul a {
+            color: inherit;
+            text-decoration: none;
+            font-family: 'PT Sans Caption', sans-serif;
+
+        }
+
+        .omOs ul a:hover {
+            opacity: 0.8;
+            color: #ffbc00
+        }
+
+        .tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips ul a {
+            color: inherit;
+            text-decoration: none;
+            font-family: 'PT Sans Caption', sans-serif;
+
+
+        }
+
+        .tips ul a:hover {
+            opacity: 0.8;
+            color: #ffbc00
+        }
+
+        .story {
+            display: block;
+        }
+
+
+        .story p {
+            text-align: left;
+            padding-top: 0;
+        }
+
+
+        .omOs,
+        .tips {
+            display: block;
+
+        }
+
+
+        #menuknap {
+            display: none;
+        }
 
     }
-
-    .footerIndhold {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        grid-gap: 15px;
-        padding-left: 18%;
-        line-height: 1.5;
-        text-align: left;
-        padding-top: 20px;
-
-
-
-
-
-    }
-
-
-    .copyright {
-        text-align: center;
-        opacity: 0.3;
-        font-size: 13px;
-
-    }
-
-
-    .omOs,
-    .tips,
-    .story {
-        box-shadow: none;
-
-    }
-
-
-    .omOs ul {
-        list-style: none;
-        padding-left: 0;
-
-    }
-
-    .omOs ul a {
-        color: inherit;
-        text-decoration: none;
-        font-family: 'PT Sans Caption', sans-serif;
-
-    }
-
-    .omOs ul a:hover {
-        opacity: 0.8;
-        color: #ffbc00
-    }
-
-    .tips ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .tips ul a {
-        color: inherit;
-        text-decoration: none;
-        font-family: 'PT Sans Caption', sans-serif;
-
-
-    }
-
-    .tips ul a:hover {
-        opacity: 0.8;
-        color: #ffbc00
-    }
-
-    .story {
-        display: block;
-    }
-
-
-    .story p {
-        text-align: left;
-        padding-top: 0;
-    }
-
-<<<<<<< HEAD
-    .omOs,
-    .tips {
-        display: block;
-
-    }
-
-=======
-    #menuknap {
-        display: none;
-    }
->>>>>>> origin/master
-}
