@@ -44,6 +44,8 @@ button {
     width: 40vw;
     height: 10vw;
     margin: 3vw 30vw 6vw 30vw;
+    border-radius: 40px;
+    background-color: #baeadd;
 }
 
 .cutout {
@@ -139,7 +141,7 @@ button {
         left: 44.5vw;
         top: 58.5vw;
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: light;
     }
 
 }
