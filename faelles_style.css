@@ -82,6 +82,7 @@ a {
     line-height: 1.5;
 
 
+
 }
 
 
@@ -166,8 +167,19 @@ a {
         display: none;
 
     }
-}
 
+    .footerContainer {
+        display: grid;
+        grid-gap: 5px;
+        height: 30vh;
+
+
+    }
+
+    .footerIndhold {
+        padding-top: 5%;
+    }
+}
 
 
 
@@ -202,9 +214,6 @@ a {
 
 
     /*footer*/
-    .footerFarve {
-        padding-top: 10vw;
-    }
 
     .footerContainer {
         display: grid;
@@ -220,14 +229,10 @@ a {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         grid-gap: 15px;
         padding-left: 20%;
-        padding-top: 30px;
         line-height: 1.5;
         text-align: left;
+        padding-top: 20px;
     }
-
-
-
-
 
 
 
