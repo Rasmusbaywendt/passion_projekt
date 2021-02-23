@@ -44,36 +44,47 @@
 
 
     <main>
-        <h1>Alle drinks</h1>
-
-        <nav>
-
-            <div id="menu" class="hidden">
-                <h3>Sortér efter:</h3>
-                <div class="filterValg">
-                    <button data-sprit="alle" class="valgt">Alle</button>
-                    <button data-sprit="vodka">Vodka</button>
-                    <button data-sprit="whiskey">Whiskey</button>
-                    <button data-sprit="gin">Gin</button>
-                    <button data-sprit="tequila">Tequila</button>
-                </div>
-
-            </div>
-        </nav>
-        <section id="liste">
+        <section id="first_section">
+            <section class="section_wrapper">
+                <img src="" alt="">
+            </section>
         </section>
 
-        <template>
-            <article class="drink">
-                <img src="" alt="" class="drinkBillede">
-                <h2 class="navn"></h2>
-                <p class="ingredienser"></p>
-                <p class="opskriftKnap"></p>
-                <button class="laesMere">
-                    <h3>Find opskrift</h3>
-                </button>
-            </article>
-        </template>
+        <section id="second_section">
+            <section class="section_wrapper">
+
+                <h1>Alle drinks</h1>
+
+                <nav>
+
+                    <div id="menu" class="hidden">
+                        <h3>Sortér efter:</h3>
+                        <div class="filterValg">
+                            <button data-sprit="alle" class="valgt">Alle</button>
+                            <button data-sprit="vodka">Vodka</button>
+                            <button data-sprit="whiskey">Whiskey</button>
+                            <button data-sprit="gin">Gin</button>
+                            <button data-sprit="tequila">Tequila</button>
+                        </div>
+
+                    </div>
+                </nav>
+                <section id="liste">
+                </section>
+
+                <template>
+                    <article class="drink">
+                        <img src="" alt="" class="drinkBillede">
+                        <h2 class="navn"></h2>
+                        <p class="ingredienser"></p>
+                        <p class="opskriftKnap"></p>
+                        <button class="laesMere">
+                            <h3>Find opskrift</h3>
+                        </button>
+                    </article>
+                </template>
+            </section>
+        </section>
 
     </main>
     <div class="footerFarve">
@@ -193,8 +204,5 @@
             location.href = `Single_view.html?id=${drink._id}`;
 
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
