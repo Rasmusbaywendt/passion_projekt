@@ -34,7 +34,7 @@
             <div class="links">
                 <a href="index.html">Forside</a>
                 <a href="drink_filter.html">Opskrifter</a>
-                <a href="">Mit barskab</a>
+                <a href="mit_barskab.html">Mit barskab</a>
             </div>
 
             <!-- Burger nav menu der kun vises i mobil version -->
@@ -146,14 +146,15 @@
             "x-apikey": "602d27ee5ad3610fb5bb619d"
         }
 
-        //Vi tjekker at alt er loadet før vi kalder den første function
+        // Vi tjekker at alt er loadet før vi kalder den første function
         document.addEventListener("DOMContentLoaded", start);
 
-        //Vi laver variablen drink som vi vil kalde vores JSON info når vi får hentet det ned og logger derefter id'et i console
+        // Vi laver variablen drink som vi vil kalde vores JSON info når vi får hentet det ned og logger derefter id'et i console
         let drinks;
         let filter = "alle";
 
         // første funktion der kaldes efter DOM er loaded
+        // Deffinere filterknapper og tilføjer eventlistener
         function start() {
 
             // Vi deffinere vores filterknapper
@@ -165,9 +166,9 @@
 
 
 
+        // Vi laver en promise chain og tildeler den JSON data vi henter til variablen drinks
         async function loadJSON() {
 
-            //??????????????????????????????????????????????????
             const JSONData = await fetch("https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
                 headers: myHeaders
             });
@@ -179,10 +180,10 @@
         }
 
 
-
         // Bliver kaldt når en filterknap klikkes på
+        // filtrerer drinks efter data-sprit attribut og tilføjer class valgt
         function filtrerDrinks() {
-            // Giver filter værdi/navn ud data-sprit attribut i html filter-nav
+            // Giver filter værdi/navn ud fra data-sprit attribut i html filter-nav
             filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit og console logger filter
             console.log(filter);
 
@@ -198,7 +199,8 @@
         }
 
 
-
+        // Udksriver JSON data ud i template html-element
+        // Udskriver for hver drink
         function visDrinks() {
 
             // container til articles med en drinks
@@ -239,6 +241,8 @@
 
         }
 
+        // Går til single_view.html, men udskriver den valgte drink's id til slut i URL'en
+        // Så id'et kan hentes ned fra single view siden efterfølgende.
         function visDetaljer(drink) {
             // Går til single view og udskrifer den valgte drinks id i single_view's url
             location.href = `Single_view.html?id=${drink._id}`;
