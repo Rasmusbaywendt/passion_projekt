@@ -1,0 +1,36 @@
+/*Mit barskab*/
+body,
+html {
+    background-color: #941d1d;
+
+}
+
+header {}
+
+.parallax {
+    background-image: url(images/ginTonicCloseUp.png);
+    width: 100%;
+    height: 50vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.mitBarskabContainer {
+    /*background-color: #941d1d;*/
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.infoTekst {
+
+    background-color: #fcf5f2;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
