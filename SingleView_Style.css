@@ -14,7 +14,7 @@ figure {
     margin: 5vw auto 3vw auto;
 }
 .drinkBillede {
-    /**/
+    /* Drink billede til mobil vises*/
     width: 100%;
 }
 .navn {
@@ -53,11 +53,8 @@ button {
     body {
         overflow-x: hidden;
     }
-    .background {
-        /* Baggrunds billede vises */
-    }
     article {
-        /* Opskrift og cutout for griid og pliver rykket foran baggrund */
+        /* Opskrift og cutout for grid og bliver rykket foran baggrund */
         display: grid;
         grid-template-columns: 2fr 1fr;
         z-index: 1;
@@ -92,7 +89,6 @@ button {
         display: grid;
         grid-template-columns: 1fr;
     }
-    article {}
     .background_container,
     article {
         /* Opskrift lægges ovenpå billedet */
