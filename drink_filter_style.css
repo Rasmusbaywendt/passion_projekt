@@ -85,6 +85,8 @@ main {
     background-image: url(images/header_7.png);
     width: 100%;
     background-repeat: no-repeat;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 #second_section {
     padding-top: 12vw;
