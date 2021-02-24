@@ -139,11 +139,11 @@
             document.querySelector(".drinkBillede").alt = drink.navn;
 
             //Her tilfører vi vores tilbage knap en Eventlistener
-            document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
+            document.querySelector("button").addEventListener("click", tilbageTilDrinkOversigt);
         }
 
         //Her får vi knappen til at sende en tilbage til forrige side
-        function tilbageTilRetOversigt() {
+        function tilbageTilDrinkOversigt() {
             //ved click på tilbage knappen kommer man tilbage til forrige side
             history.back();
         }
