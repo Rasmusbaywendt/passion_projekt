@@ -49,13 +49,187 @@
             <h1>Mit Barskab</h1>
             <div class="infoTekst">
                 <h3>Her kan du finde dine gemte opskrifter, så du nemt kan finde dine yndlingsdrinks.</h3>
+                <p>Drink Factory vil gøre det så enkelt for dig som muligt, at hurtigt finde opskriften på den drink, som du har brug for. Derfor kan du ved brug af Mit Barskab finde dine gemte opskrifter, så du altid har dem lige ved hånden.</p>
                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+
             </div>
         </div>
+        <section id="first_section">
+            <section class="section_wrapper">
+                <img src="" alt="">
+            </section>
+        </section>
+
+        <section id="second_section">
+            <section class="section_wrapper">
+
+                <h2 class="gemteOpskrifter">Dine gemte opskrifter</h2>
+
+                <nav>
+                    <div id="menu" class="hidden">
+                        <h3>Sortér efter:</h3>
+
+                        <!-- Filtreringsknapper med data attributter -->
+                        <div class="filterValg">
+                            <button data-sprit="alle" class="valgt">Alle</button>
+                            <button data-sprit="vodka">Vodka</button>
+                            <button data-sprit="whiskey">Whiskey</button>
+                            <button data-sprit="gin">Gin</button>
+                            <button data-sprit="tequila">Tequila</button>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <section id="liste">
+                </section>
+
+                <!-- HTML skabalon for de forskellige dirnks man kan vælge -->
+                <template>
+                    <article class="drink">
+                        <img src="" alt="" class="drinkBillede">
+                        <div class="tekstboks">
+                            <h2 class="navn"></h2>
+                            <p class="ingredienser"></p>
+                            <p class="opskriftKnap"></p>
+                            <button class="laesMere">
+                                <h3>Find opskrift</h3>
+                            </button>
+                        </div>
+                    </article>
+                </template>
+            </section>
+        </section>
+        <!-- HTML skabalon for de forskellige dirnks man kan vælge -->
+        <template>
+            <article class="drink">
+                <img src="" alt="" class="drinkBillede">
+                <div class="tekstboks">
+                    <h2 class="navn"></h2>
+                    <p class="ingredienser"></p>
+                    <p class="opskriftKnap"></p>
+                    <button class="laesMere">
+                        <h3>Find opskrift</h3>
+                    </button>
+                </div>
+            </article>
+        </template>
 
 
     </main>
 
-    <script src=""></script>
+    <script>
+        // Vi deffinere en header for vores nav, så vi kan udskrive tekst i den senere
+        // Vi angiver de informationer vi skal brug for at hive
+        //info ned fra Restdb som konstanter
+        const header = document.querySelector("main h1");
+        const medieurl = "https://drinks-3b7b.restdb.io/media/";
+        const myHeaders = {
+
+            "x-apikey": "602d27ee5ad3610fb5bb619d"
+        }
+
+        // Vi tjekker at alt er loadet før vi kalder den første function
+        document.addEventListener("DOMContentLoaded", start);
+
+        // Vi laver variablen drink som vi vil kalde vores JSON info når vi får hentet det ned og logger derefter id'et i console
+        let drinks;
+        let filter = "alle";
+
+        // første funktion der kaldes efter DOM er loaded
+        // Deffinere filterknapper og tilføjer eventlistener
+        function start() {
+
+            // Vi deffinere vores filterknapper
+            const filterKnapper = document.querySelectorAll("nav button");
+            // Hver knap giver vi en eventlistener, samt kalder function loadJSON
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
+            loadJSON();
+        }
+
+
+
+        // Vi laver en promise chain og tildeler den JSON data vi henter til variablen drinks
+        async function loadJSON() {
+
+            const JSONData = await fetch("https://drinks-3b7b.restdb.io/rest/dynamiskdrinks", {
+                headers: myHeaders
+            });
+            drinks = await JSONData.json();
+
+            //Vi udskriver det i console før vi kalder den næste function
+            console.log("drinks", drinks);
+            visDrinks();
+        }
+
+
+        // Bliver kaldt når en filterknap klikkes på
+        // filtrerer drinks efter data-sprit attribut og tilføjer class valgt
+        function filtrerDrinks() {
+            // Giver filter værdi/navn ud fra data-sprit attribut i html filter-nav
+            filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit og console logger filter
+            console.log(filter);
+
+            // Fjerner class valgt, for efter at place valgt på den valgte filterknap
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
+
+            // Kalder function visDrink
+            visDrinks();
+            // Udskriver filterknap-indhold i header(h1)
+            header.textContent = this.textContent;
+
+        }
+
+
+        // Udksriver JSON data ud i template html-element
+        // Udskriver for hver drink
+        function visDrinks() {
+
+            // container til articles med en drinks
+            const dest = document.querySelector("#liste");
+
+            // Deffinere html skabelon (article)
+            const skabelon = document.querySelector("template").content;
+
+            //Ryder container inden nyt loop
+            dest.textContent = "";
+
+
+            // For hver drink:
+            drinks.forEach(drink => {
+
+                // If-sætning bestemmer Hvad den skal filtrere efter. Eller om den skal filtrere
+                if (filter == drink.sprit || filter == "alle") {
+
+
+                    // loop igennem JSON (drinks)
+                    // Kloner skabalon og udskriver indhold til de foskellige html elementer
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".navn").textContent = drink.navn;
+                    klon.querySelector(".ingredienser").textContent = `${drink.keywords}`;
+                    // Til billed bruger vi medie URL'en
+                    // 0 betyder at kan skal tage fra nr 0 i arrey'et. et arrey starter pr default fra 0
+                    klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
+                    klon.querySelector(".drinkBillede").alt = drink.billeder;
+
+                    // Ved click kalder function visDetaljer
+                    klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
+
+                    //???????????????????????????????
+                    dest.appendChild(klon);
+
+                }
+            })
+
+        }
+
+        // Går til single_view.html, men udskriver den valgte drink's id til slut i URL'en
+        // Så id'et kan hentes ned fra single view siden efterfølgende.
+        function visDetaljer(drink) {
+            // Går til single view og udskrifer den valgte drinks id i single_view's url
+            location.href = `Single_view.html?id=${drink._id}`;
+
+        }
+    </script>
 </body></html>
