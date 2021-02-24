@@ -3,6 +3,11 @@
 body {
     background-color: rgb(148, 29, 29);
 }
+main {
+    background-image: url(images/streger_body.png);
+    background-position: center;
+    background-size: cover;
+}
 button {
     width: 200px;
     height: 50px;
@@ -14,8 +19,6 @@ button a {
 }
 .splash_wrapper {
     display: grid;
-    max-width: 100%;
-    margin: auto;
     justify-content: center;
     overflow: hidden;
 }
@@ -27,22 +30,24 @@ button a {
 .splash_wrapper h1 {
     grid-area: 1/1;
     place-self: center;
-    background-color: rgba(252, 239, 215, 0.7);
     font-size: 8vw;
-    border-radius: 20px;
-    color: #373737;
+    text-shadow: 4px 0 0 #941D1D, -4px 0 0 #941D1D, 0 4px 0 #941D1D, 0 -4px 0 #941D1D, 2px 2px #941D1D, -2px -2px 0 #941D1D, 2px -2px 0 #941D1D, -2px 2px 0 #941D1D;
+    color: #ffbc00;
     padding: 8vw;
 }
 .splash_wrapper button {
     grid-area: 1/1;
     place-self: center;
-    margin-top: 200px;
+    margin-top: 300px;
 }
 @media (max-width: 900px) {
     .splash_wrapper img {
         grid-area: 1/1;
         place-self: center;
         width: 180%;
+    }
+    .splash_wrapper {
+        padding: 50vw;
     }
     button {
         width: 100px;
