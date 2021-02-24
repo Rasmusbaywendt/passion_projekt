@@ -14,7 +14,7 @@ body {
 }
 main h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 6rem;
     margin-bottom: 0;
 }
 h2 {
@@ -81,10 +81,13 @@ button:hover {
     background-color: white;
     border-color: #FFAF34;
 }
-#second_section {
-    background-image: url(images/header_5.png);
+main {
+    background-image: url(images/header_7.png);
     width: 100%;
     background-repeat: no-repeat;
+}
+#second_section {
+    padding-top: 12vw;
 }
 @media (min-width: 1200px) {
     #liste {
