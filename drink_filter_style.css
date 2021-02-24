@@ -87,6 +87,7 @@ main {
     background-repeat: no-repeat;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-size: contain;
 }
 #second_section {
     padding-top: 12vw;
