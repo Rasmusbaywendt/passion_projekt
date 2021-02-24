@@ -6,7 +6,7 @@ body {
 }
 #menu {
     margin: 5vw;
-    margin-right: 3vw;
+    margin-right: 5vw;
     text-align: center;
 }
 #second_section nav {
@@ -66,10 +66,15 @@ main article button:hover {
 .filterValg {
     display: flex;
     justify-content: space-around;
+<<<<<<< HEAD
+    grid-gap: 2vw;
+
+=======
+>>>>>>> origin/master
 }
 #menu button {
     width: 100%;
-    margin: 1vw 2vw 1vw 0;
+    margin: 1vw 0vw 1vw 0;
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.39);
@@ -87,6 +92,7 @@ main {
     background-repeat: no-repeat;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-size: contain;
 }
 #second_section {
     padding-top: 12vw;
