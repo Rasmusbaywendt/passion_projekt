@@ -246,6 +246,7 @@ nav {
 }
 
 
+
 @media(min-width:801px) {
 
     /*tilpasse container*/
@@ -304,114 +305,114 @@ nav {
     #menuknap {
         display: none;
     }
+}
 
 
 
-    @media (min-width: 1200px) {}
+@media (min-width: 1200px) {}
 
 
-    @media (min-width: 1200px) {
+@media (min-width: 1200px) {
 
 
 
-        /*footer*/
+    /*footer*/
 
-        /*tilføje grid på container*/
-        .footerContainer {
-            display: grid;
-            height: 40vh;
-            grid-gap: 5px;
-            grid-template-rows: 20% auto 100px;
-        }
+    /*tilføje grid på container*/
+    .footerContainer {
+        display: grid;
+        height: 40vh;
+        grid-gap: 5px;
+        grid-template-rows: 20% auto 100px;
+    }
 
-        /*tilføje grid på div så teksten står i kolonner*/
-        .footerIndhold {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-gap: 15px;
-            padding-left: 18%;
-            line-height: 1.5;
-            text-align: left;
-            padding-top: 20px;
+    /*tilføje grid på div så teksten står i kolonner*/
+    .footerIndhold {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 15px;
+        padding-left: 18%;
+        line-height: 1.5;
+        text-align: left;
+        padding-top: 20px;
 
-
-        }
-
-        /*centrere copyright-tekst i footer*/
-        .copyright {
-            text-align: center;
-            opacity: 0.3;
-            font-size: 13px;
-
-        }
-
-        /*fjerne styling for artiklerne*/
-        .omOs,
-        .tips,
-        .story {
-            box-shadow: none;
-            background: none;
-
-        }
-
-        /*fjerne styling på ul i Om os tekst*/
-        .omOs ul {
-            list-style: none;
-            padding-left: 0;
-
-        }
-
-        /*style om os-tekst*/
-        .omOs ul a {
-            color: inherit;
-            text-decoration: none;
-            font-family: 'PT Sans Caption', sans-serif;
-
-        }
-
-        /*tilføje hover på om os-tekst*/
-        .omOs ul a:hover {
-            opacity: 0.8;
-            color: #ffbc00
-        }
-
-        /*fjerne styling på ul i Tips og triks tekst*/
-        .tips ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        /*style om tips og triks-tekst*/
-        .tips ul a {
-            color: inherit;
-            text-decoration: none;
-            font-family: 'PT Sans Caption', sans-serif;
-
-
-        }
-
-        /*tilføje hover på tips og triks-tekst*/
-        .tips ul a:hover {
-            opacity: 0.8;
-            color: #ffbc00
-        }
-
-        /*Tilføje blok så teksten i Drink Factory-teksten står korrekt*/
-        .story {
-            display: block;
-        }
-
-        /*Tilføje blok så teksten i Drink Factory-teksten står korrekt*/
-        .story p {
-            text-align: left;
-            padding-top: 0;
-        }
-
-        /*Tilføje blok så teksten i Om os og tips og triks-teksten står korrekt*/
-        .omOs,
-        .tips {
-            display: block;
-
-        }
 
     }
+
+    /*centrere copyright-tekst i footer*/
+    .copyright {
+        text-align: center;
+        opacity: 0.3;
+        font-size: 13px;
+
+    }
+
+    /*fjerne styling for artiklerne*/
+    .omOs,
+    .tips,
+    .story {
+        box-shadow: none;
+        background: none;
+
+    }
+
+    /*fjerne styling på ul i Om os tekst*/
+    .omOs ul {
+        list-style: none;
+        padding-left: 0;
+
+    }
+
+    /*style om os-tekst*/
+    .omOs ul a {
+        color: inherit;
+        text-decoration: none;
+        font-family: 'PT Sans Caption', sans-serif;
+
+    }
+
+    /*tilføje hover på om os-tekst*/
+    .omOs ul a:hover {
+        opacity: 0.8;
+        color: #ffbc00
+    }
+
+    /*fjerne styling på ul i Tips og triks tekst*/
+    .tips ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    /*style om tips og triks-tekst*/
+    .tips ul a {
+        color: inherit;
+        text-decoration: none;
+        font-family: 'PT Sans Caption', sans-serif;
+
+
+    }
+
+    /*tilføje hover på tips og triks-tekst*/
+    .tips ul a:hover {
+        opacity: 0.8;
+        color: #ffbc00
+    }
+
+    /*Tilføje blok så teksten i Drink Factory-teksten står korrekt*/
+    .story {
+        display: block;
+    }
+
+    /*Tilføje blok så teksten i Drink Factory-teksten står korrekt*/
+    .story p {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    /*Tilføje blok så teksten i Om os og tips og triks-teksten står korrekt*/
+    .omOs,
+    .tips {
+        display: block;
+
+    }
+}
