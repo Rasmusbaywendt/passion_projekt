@@ -67,7 +67,7 @@ a:hover {
 }
 
 /*footer*/
-
+/*style diven udenom footer, så footeren får en farve*/
 .footerFarve {
     background-color:
         /*rgba(186, 234, 221, 0.28);*/
@@ -76,6 +76,7 @@ a:hover {
 
 }
 
+/*tilføje grid på container*/
 .footerContainer {
     display: grid;
     grid-gap: 5px;
@@ -83,6 +84,7 @@ a:hover {
     margin-top: 150px;
 }
 
+/*tilføje grid på div så teksten står i kolonner*/
 .footerIndhold {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -96,6 +98,7 @@ a:hover {
 
 }
 
+/*tilpasse tekst og fjerne baggrund*/
 .omOs {
     display: block;
     background: none;
@@ -103,19 +106,21 @@ a:hover {
 
 }
 
+/*fjerne styling fra artiklerne i footer*/
 .omOs,
 .tips,
 .story {
     box-shadow: none;
 }
 
-
+/*fjerne liststyle på om os-tekst samt fjerne padding*/
 .omOs ul {
     list-style: none;
     padding-left: 0;
 
 }
 
+/*style om os-tekst med korrekt font*/
 .omOs ul a {
     color: inherit;
     text-decoration: none;
@@ -123,19 +128,20 @@ a:hover {
 
 }
 
+/*tilføje hover*/
 .omOs ul a:hover {
     opacity: 0.8;
     color: #ffbc00
 }
 
-
+/*tips og triks og Drink Factory-tekst fjernes i mobil*/
 .tips,
 .story {
     display: none;
 }
 
 
-
+/*centrere copyright-teksten i footer*/
 .copyright {
     text-align: center;
     opacity: 0.3;
@@ -235,6 +241,8 @@ nav {
 
 
 @media(min-width:801px) {
+
+    /*tilpasse container*/
     .footerContainer {
         display: grid;
         height: 40vh;
@@ -245,6 +253,7 @@ nav {
 
     }
 
+    /*tilpasse div*/
     .footerIndhold {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -254,18 +263,20 @@ nav {
         padding-top: 20px;
     }
 
-
+    /*tilføje block så teksten står korrekt*/
     .tips,
     .story {
         display: block;
 
     }
 
+    /*så teksten står til venstre*/
     .story p {
         text-align: left;
         padding-top: 0;
     }
 
+    /*så teksten står til venstre*/
     .tips ul {
         list-style: none;
         padding: 0;
@@ -299,6 +310,7 @@ nav {
 
         /*footer*/
 
+        /*tilføje grid på container*/
         .footerContainer {
             display: grid;
             height: 40vh;
@@ -306,6 +318,7 @@ nav {
             grid-template-rows: 20% auto 100px;
         }
 
+        /*tilføje grid på div så teksten står i kolonner*/
         .footerIndhold {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -318,7 +331,7 @@ nav {
 
         }
 
-
+        /*centrere copyright-tekst i footer*/
         .copyright {
             text-align: center;
             opacity: 0.3;
@@ -326,7 +339,7 @@ nav {
 
         }
 
-
+        /*fjerne styling for artiklerne*/
         .omOs,
         .tips,
         .story {
@@ -335,13 +348,14 @@ nav {
 
         }
 
-
+        /*fjerne styling på ul i Om os tekst*/
         .omOs ul {
             list-style: none;
             padding-left: 0;
 
         }
 
+        /*style om os-tekst*/
         .omOs ul a {
             color: inherit;
             text-decoration: none;
@@ -349,16 +363,19 @@ nav {
 
         }
 
+        /*tilføje hover på om os-tekst*/
         .omOs ul a:hover {
             opacity: 0.8;
             color: #ffbc00
         }
 
+        /*fjerne styling på ul i Tips og triks tekst*/
         .tips ul {
             list-style: none;
             padding: 0;
         }
 
+        /*style om tips og triks-tekst*/
         .tips ul a {
             color: inherit;
             text-decoration: none;
@@ -367,22 +384,24 @@ nav {
 
         }
 
+        /*tilføje hover på tips og triks-tekst*/
         .tips ul a:hover {
             opacity: 0.8;
             color: #ffbc00
         }
 
+        /*Tilføje blok så teksten i Drink Factory-teksten står korrekt*/
         .story {
             display: block;
         }
 
-
+        /*Tilføje blok så teksten i Drink Factory-teksten står korrekt*/
         .story p {
             text-align: left;
             padding-top: 0;
         }
 
-
+        /*Tilføje blok så teksten i Om os og tips og triks-teksten står korrekt*/
         .omOs,
         .tips {
             display: block;
