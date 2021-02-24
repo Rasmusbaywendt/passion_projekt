@@ -58,4 +58,7 @@ button a {
         grid-area: 1/1;
         place-self: center;
     }
+    .splash_wrapper h1 {
+        font-size: 12vw;
+    }
 }
