@@ -3,7 +3,7 @@
 body {
     background-color: rgb(148, 29, 29);
 }
-main {
+.baggrund {
     background-image: url(images/streger_body.png);
     background-position: center;
     background-size: cover;
@@ -20,7 +20,6 @@ button a {
 .splash_wrapper {
     display: grid;
     justify-content: center;
-    overflow: hidden;
 }
 .splash_wrapper img {
     grid-area: 1/1;
@@ -39,6 +38,9 @@ button a {
     grid-area: 1/1;
     place-self: center;
     margin-top: 300px;
+}
+.footerContainer {
+    margin-top: 0;
 }
 @media (max-width: 900px) {
     .splash_wrapper img {
