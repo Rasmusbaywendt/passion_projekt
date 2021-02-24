@@ -7,7 +7,8 @@ main li {
 }
 
 main article {
-    Her centrer og skalere indholdet max-width: 90vw;
+    /*Her centrer og skalere indholdet*/
+    max-width: 90vw;
     margin: auto;
 }
 
@@ -61,6 +62,13 @@ button {
     margin: 3vw 30vw 6vw 30vw;
     border-radius: 40px;
     background-color: #baeadd;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+button:hover {
+    background-color: white;
+    box-shadow: 3px 3px 20px 1px rgba(0, 0, 0, 0.28);
 }
 
 .cutout {
@@ -160,7 +168,7 @@ button {
         position: absolute;
         top: 55.5vw;
         left: -13vw;
-        font-size: 1.5rem;
+        font-size: 1.35rem;
         font-weight: light;
     }
 }
