@@ -49,6 +49,9 @@ button {
     top: 4vw;
     font-size: 2.5rem;
     margin: 10px;
+    color: #ffbc00;
+    z-index: 2;
+    cursor: pointer;
 }
 
 
@@ -131,7 +134,7 @@ a:hover {
 /*tilføje hover*/
 .omOs ul a:hover {
     opacity: 0.8;
-    color: #ffbc00
+    color: #ffbc00;
 }
 
 /*tips og triks og Drink Factory-tekst fjernes i mobil*/
@@ -215,21 +218,24 @@ nav {
     }
 
     nav {
-        width: 100%;
+        width: 100vw;
     }
 
     #burger {
         position: fixed;
         right: 0;
+        top: 0;
+        width: auto;
         height: 100%;
-        top: 10vh;
         background-color: #FCF5F2;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
         font-size: 40px;
-        line-height: 3;
+        line-height: 2.5;
+        margin-top: 0;
+        padding: 60px 13vw 0 5vw;
+        z-index: 1;
     }
 
 
