@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single View</title>
     <link rel="stylesheet" href="faelles_style.css">
+    <!-- stylesheet specifikt til single view kommer sidst så den kan override design fra faelles-->
     <link rel="stylesheet" href="SingleView_Style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -43,26 +44,34 @@
     </header>
 
 
+
     <main>
         <section id="first_section">
-            <div class="section_wraper">
-                <!-- -->
+            <!-- elementerne bliver puttet i en wrapper så de kan placeres med grid -->
+            <div class="section_wrapper">
+                <!-- starter ud med billedet så den kan placeres bagved -->
                 <div class="background_container">
                     <img src="images/background.svg" alt="" class="background">
                 </div>
+                <!-- herefter har vi opskriften så den kan placeres ovenpå -->
                 <article class="drink">
+                    <!-- Først billede så det kan placeres til venstre -->
                     <figure>
+                        <!-- her har vi både et cutout til desktop og et med baggrund til mobil hvor det store baggrunds billede gemmes væk-->
                         <img src="" alt="" class="drinkBillede">
                         <img src="" alt="" class="cutout">
                     </figure>
+                    <!-- så opskrift så det kan placeres til højre -->
                     <div class="opskrift">
                         <h2 class="navn"></h2>
                         <p class="smag"></p>
                         <p class="ingre">Ingredienser:</p>
+                        <!-- en liste som ingredienserne kan udskrives i -->
                         <ul class="ingredienser"></ul>
                         <p class="fremgangsmåde"></p>
                     </div>
                 </article>
+                <!-- tilsidst har vi knappen -->
                 <div class="tilbage">
                     <button>Tilbage</button>
                 </div>
@@ -93,8 +102,7 @@
         //Vi tjekker at alt er loadet før vi kalder den første function
         document.addEventListener("DOMContentLoaded", loadJSON);
 
-
-
+        //Her henter vi JSON data
         async function loadJSON() {
 
             //Vi laver en promise chain og tildeler den JSON data vi
@@ -109,8 +117,7 @@
             visDrink();
         }
 
-
-
+        //Her udskriver vi JSON data i vores DOM
         function visDrink() {
 
             //Vi tager informationerne og putter dem ind i vores DOM
@@ -135,9 +142,13 @@
             document.querySelector("button").addEventListener("click", tilbageTilRetOversigt);
         }
 
+        //Her får vi knappen til at sende en tilbage til forrige side
         function tilbageTilRetOversigt() {
             //ved click på tilbage knappen kommer man tilbage til forrige side
             history.back();
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
