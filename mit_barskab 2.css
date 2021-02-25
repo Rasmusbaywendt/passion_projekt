@@ -1,4 +1,5 @@
 /*Mit barskab*/
+/*Angivet baggrundsfarve*/
 body,
 html {
     background-color: #941d1d;
@@ -7,34 +8,30 @@ html {
 
 header {}
 
-.parallax_container {
-    overflow: hidden;
-    background-color: #10293F;
-    box-shadow: 1px 5px 15px 1px #10293F;
-}
-
+/*Styler billedet som ligger under nav, tilføjer billede samt bestemmer bredde og højden på billedet*/
 .parallax {
     background-image: url(images/billede_17.jpg);
     width: 100%;
     height: 50vh;
+    /*fastgør billedet så det ikke følger med på siden, når der scrolles*/
     background-attachment: fixed;
-    background-position: 3vw;
+    background-position: center;
+    /*bestemmer, at baggrundsbilledet ikke skal gentages*/
     background-repeat: no-repeat;
+    /*Så man kan se hele billedet*/
     background-size: cover;
-    transform: scale(1.21);
+
+
 }
 
+/*styling af container*/
 .mitBarskabContainer {
-    /*background-color: #941d1d;*/
     padding-left: 10%;
     padding-right: 10%;
 }
 
-.infoTekst {
 
-    background-color:
-}
-
+/*Styling af overskrift*/
 h1 {
     text-align: center;
     font-size: 40px;
