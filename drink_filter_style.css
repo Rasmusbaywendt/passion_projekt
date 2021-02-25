@@ -6,6 +6,7 @@ body {
     background-color: rgb(148, 29, 29);
 }
 
+/*Filtrerings menu*/
 #menu {
     margin: 5vw;
     margin-right: 5vw;
@@ -16,12 +17,14 @@ body {
     height: auto;
 }
 
+/*Overskrift der ændres efter filter*/
 main h1 {
     text-align: center;
     font-size: 6rem;
     margin-bottom: 0;
 }
 
+/* H2 bliver brugt i template article*/
 h2 {
     font-size: 2.5rem;
     margin-bottom: 0;
@@ -29,12 +32,14 @@ h2 {
     color: black;
 }
 
+/* Alt alm. tekst skal som udgangspunkt være centreret*/
 p {
     text-align: center;
     margin-top: 0px;
     padding-top: 4px;
 }
 
+/* Giver article(template) størrelse, grid, farve og skygge*/
 main article {
     margin: 1vw;
     box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.39);
@@ -48,10 +53,12 @@ article .tekstboks {
     display: grid;
 }
 
+/* Fremhæver den specifikke drink article man hover hen over*/
 main article:hover {
     transform: scale(1.08);
 }
 
+/* giver transition tid, så den scaler ''blødt'' til dens hover effekt*/
 main article button {
     transition: 0.5s;
 }
@@ -60,6 +67,7 @@ main article button:hover {
     transform: scale(1.2);
 }
 
+/* Knap der går til single View */
 .laesMere {
     margin-left: auto;
     margin-right: auto;
@@ -67,10 +75,13 @@ main article button:hover {
     box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.39);
 }
 
+/* Margin til Tekst i knap*/
 .laesMere h3 {
     margin: 8px;
 }
 
+/* Liste article template'en bliver udskrevet/klonet ud i*/
+/* Den går grid regler*/
 #liste {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -78,12 +89,14 @@ main article button:hover {
     margin: 25px 4vw 0 4vw;
 }
 
+/* filterknapper får grid/flex*/
 .filterValg {
     display: flex;
     justify-content: space-around;
     grid-gap: 2vw;
 }
 
+/* Filterknapper bliver deffinere */
 #menu button {
     width: 100%;
     margin: 1vw 0vw 1vw 0;
@@ -93,10 +106,12 @@ main article button:hover {
     transition: 0.3s;
 }
 
+/* Knapperne får hover effekt */
 button:hover {
     background: white;
 }
 
+/* Filter menu knappepr har deres egen specifikke hover effekt */
 #menu button:hover {
     background: white;
     transform: scale(1.15);
@@ -104,6 +119,7 @@ button:hover {
 
 }
 
+/* Den valgte filter knap som sorteres efter */
 .valgt {
     background-color: white;
     border-color: #FFAF34;
