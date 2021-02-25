@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     margin: 0;
 }
@@ -172,3 +173,146 @@ button:hover {
         font-weight: light;
     }
 }
+=======
+                    * {
+                        margin: 0;
+                    }
+                    main li {
+                        font-family: 'PT Sans Caption', sans-serif;
+                    }
+                    article {
+                        /* Her centrer og skalere indholdet*/
+                        max-width: 90vw;
+                        margin: auto;
+                    }
+                    figure {
+                        width: 90%;
+                        margin: 5vw auto 3vw auto;
+                    }
+                    .drinkBillede {
+                        /* Drink billede til mobil vises*/
+                        width: 100%;
+                    }
+                    .navn {
+                        color: black;
+                        padding-bottom: 1vw;
+                    }
+                    .smag {
+                        text-align: center;
+                        padding-bottom: 5vw
+                    }
+                    .ingredienser {
+                        padding-top: 1vw;
+                    }
+                    .fremgangsmåde {
+                        padding: 3vw 0vw;
+                    }
+                    button {
+                        /* Knap designes*/
+                        width: 40vw;
+                        height: 10vw;
+                        margin: 3vw 30vw 6vw 30vw;
+                        border-radius: 40px;
+                        background-color: #baeadd;
+                    }
+                    .cutout {
+                        /* Cutout gemmes i mobil version */
+                        position: relative;
+                        max-width: 0%;
+                        left: 0vw;
+                    }
+                    .background {
+                        /* Baggrundsbillede gemmes i mobil version */
+                        width: 0%;
+                    }
+                    @media (min-width: 800px) {
+                        body {
+                            overflow-x: hidden;
+                        }
+                        article {
+                            /* Opskrift og cutout for grid og bliver rykket foran baggrund */
+                            display: grid;
+                            grid-template-columns: 2fr 1fr;
+                            z-index: 1;
+                        }
+                        nav {
+                            background-color: #941D1F;
+                        }
+                        .navn {
+                            text-align: left;
+                            font-size: 3rem;
+                        }
+                        .opskrift {
+                            /* Selve opskrifte for et lettere transparent baggrund */
+                            background-color: rgba(255, 255, 255, 0.55);
+                            padding: 3vw;
+                            z-index: 3;
+                        }
+                        .drinkBillede {
+                            /* Her skjulles billede som bruges på */
+                            width: 0%;
+                        }
+                        .background {
+                            /*Baggrund billede vises positioneres og skaleres */
+                            width: 100%;
+                            position: relative;
+                            top: 0;
+                            left: 0;
+                            max-width: 100vw;
+                        }
+                        .section_wrapper {
+                            /* Et "pseudo" grid til at ligge opskrift ovenpå baggrund */
+                            display: grid;
+                            grid-template-columns: 1fr;
+                        }
+                        .background_container,
+                        article {
+                            /* Opskrift lægges ovenpå billedet */
+                            grid-area: 1/1;
+                        }
+                        .cutout {
+                            /* cutout vises, placeres, og skaleres*/
+                            position: relative;
+                            max-width: 50%;
+                            left: 25vw;
+                        }
+                        .smag {
+                            text-align: left;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .ingre {
+                            margin: 3vw 0vw 0vw 0vw;
+                            padding: 0vw;
+                            font-weight: bold;
+                        }
+                        .ingredienser {
+                            margin: 1vw 0vw 0vw 0vw;
+                            padding: 0vw 0vw 0vw 1vw;
+                        }
+                        button {
+                            /* Tilbage knap styles */
+                            width: 12vw;
+                            height: 4vw;
+                            position: absolute;
+                            top: 55.5vw;
+                            left: -13vw;
+                            font-size: 1.5rem;
+                            font-weight: light;
+                        }
+                        .slide {
+                            animation-name: slide_kf;
+                            animation-duration: 2s;
+                            animation-timing-function: ease-out;
+                            animation-iteration-count: 1;
+                        }
+                        @keyframes slide_kf {
+                            0% {
+                                transform: translate(60vw, -18vw)scale(0.5);
+                            }
+                            100% {
+                                transform: translate(0vw, 0vw)
+                            }
+                        }
+                    }
+>>>>>>> singleviewdrinkanimation
