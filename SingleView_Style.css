@@ -1,4 +1,4 @@
-    <<<<<<< HEAD * {
+* {
     margin: 0;
 }
 main li {
@@ -92,6 +92,7 @@ button:hover {
         /* Selve opskrifte for et lettere transparent baggrund */
         background-color: rgba(255, 255, 255, 0.55);
         padding: 3vw;
+        z-index: 3;
     }
     .drinkBillede {
         /* Her skjulles billede som bruges på */
@@ -159,3 +160,19 @@ button:hover {
             transform: translate(0vw, 0vw)
         }
     }
+}
+@media(min-width: 800px) and (max-width: 1050px) {
+    section article {
+        /* Opskrift og cutout for grid og bliver rykket foran baggrund */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        z-index: 1;
+    }
+    .cutout {
+        /* cutout vises, placeres, og skaleres*/
+        position: relative;
+        max-width: 50%;
+        left: 25vw;
+        top: 10vw;
+    }
+}
