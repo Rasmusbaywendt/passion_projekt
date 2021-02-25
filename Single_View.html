@@ -59,7 +59,7 @@
                     <figure>
                         <!-- her har vi både et cutout til desktop og et med baggrund til mobil hvor det store baggrunds billede gemmes væk-->
                         <img src="" alt="" class="drinkBillede">
-                        <img src="" alt="" class="cutout slide">
+                        <img src="" alt="" class="cutout">
                     </figure>
                     <!-- så opskrift så det kan placeres til højre -->
                     <div class="opskrift">
@@ -136,10 +136,15 @@
             document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
             document.querySelector(".drinkBillede").src = medieurl + drink.billeder;
             document.querySelector(".cutout").src = medieurl + drink.billederCutout;
+            document.querySelector(".cutout").classList.add("slide");
             document.querySelector(".drinkBillede").alt = drink.navn;
 
             //Her tilfører vi vores tilbage knap en Eventlistener
             document.querySelector("button").addEventListener("click", tilbageTilDrinkOversigt);
+            document.querySelector(".cutout").addEventListener("animationend", function() {
+
+                document.querySelector(".cutout").classList.remove("slide");
+            })
         }
 
         //Her får vi knappen til at sende en tilbage til forrige side
