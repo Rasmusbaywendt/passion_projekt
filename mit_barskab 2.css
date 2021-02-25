@@ -77,16 +77,18 @@ h2 {
     color: #FFAF34;
 }
 
-.infoTekst p {
-    text-align: left;
-}
 
-h3 {
+.infoTekst h3 {
     text-align: center;
+    font-size: 1.5rem
 }
 
 p {
     text-align: center;
+}
+
+.infoTekst p {
+    font-size: 1.5em;
     margin-top: 0px;
     padding-top: 4px;
 }
