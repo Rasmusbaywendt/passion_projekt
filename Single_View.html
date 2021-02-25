@@ -170,12 +170,17 @@
             //For billederne bruger vi medie URL'en til at tilføje med
             document.querySelector(".fremgangsmåde").textContent = drink.fremgangsmåde;
             document.querySelector(".drinkBillede").src = medieurl + drink.billeder;
-            document.querySelector(".cutout").src = medieurl + drink.billederCutout;
-            document.querySelector(".cutout").classList.add("slide");
             document.querySelector(".drinkBillede").alt = drink.navn;
+            document.querySelector(".cutout").src = medieurl + drink.billederCutout;
+            document.querySelector(".cutout").alt = drink.navn;
+
+            //Slide effekt tillæegges cutout så den kører ind
+            document.querySelector(".cutout").classList.add("slide");
 
             //Her tilfører vi vores tilbage knap en Eventlistener
             document.querySelector("button").addEventListener("click", tilbageTilDrinkOversigt);
+
+            //slide fjernes når den er færdig
             document.querySelector(".cutout").addEventListener("animationend", function() {
 
                 document.querySelector(".cutout").classList.remove("slide");
