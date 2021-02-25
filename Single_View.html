@@ -69,6 +69,9 @@
                         <!-- en liste som ingredienserne kan udskrives i -->
                         <ul class="ingredienser"></ul>
                         <p class="fremgangsmåde"></p>
+                        <div id="heart">
+                            <img src="images/empty_heart.svg" alt="" class="heart">
+                        </div>
                     </div>
                 </article>
                 <!-- tilsidst har vi knappen -->
@@ -132,6 +135,7 @@
         //Vi laver variablen drink som vi vil kalde vores JSON info
         //når vi får hentet det ned og logger derefter id'et i console
         let drink;
+        const heart = document.querySelector("#heart");
         console.log("ID", id);
 
         //Vi tjekker at alt er loadet før vi kalder den første function
@@ -186,6 +190,12 @@
                 document.querySelector(".cutout").classList.remove("slide");
             })
         }
+
+        heart.addEventListener("click", function() {
+            heart.classList.toggle("heart_shown");
+        })
+
+
 
         //Her får vi knappen til at sende en tilbage til forrige side
         function tilbageTilDrinkOversigt() {

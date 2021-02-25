@@ -71,6 +71,19 @@ button:hover {
     /* Baggrundsbillede gemmes i mobil version */
     width: 0%;
 }
+#heart {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.heart {
+    max-width: 4vw;
+    grid: 1/1;
+}
+.heart_shown {
+    background-image: url(images/full_heart.svg);
+    max-width: 4vw;
+    background-size: cover;
+}
 @media (min-width: 800px) {
     body {
         overflow-x: hidden;
