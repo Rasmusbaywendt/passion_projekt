@@ -99,7 +99,7 @@ main article button:hover {
 /* Filterknapper bliver deffinere */
 #menu button {
     width: 100%;
-    margin: 1vw 0vw 1vw 0;
+    margin: 1vw 0vw 1vw 0vw;
     padding-top: 5px;
     padding-bottom: 5px;
     box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.39);
@@ -149,7 +149,7 @@ main {
     }
 
     #menu {
-        margin-left: 220px;
-        margin-right: 190px;
+        margin-left: 215px;
+        margin-right: 215px;
     }
 }

@@ -8,6 +8,12 @@ html {
 
 header {}
 
+.parallax_container {
+    overflow: hidden;
+    background-color: #10293F;
+
+}
+
 /*Styler billedet som ligger under nav, tilføjer billede samt bestemmer bredde og højden på billedet*/
 .parallax {
     background-image: url(images/billede_17.jpg);
@@ -20,8 +26,7 @@ header {}
     background-repeat: no-repeat;
     /*Så man kan se hele billedet*/
     background-size: cover;
-
-
+    transform: scale(1.1);
 }
 
 /*styling af container*/
