@@ -76,12 +76,14 @@ button:hover {
     grid-template-columns: 1fr;
 }
 .heart {
-    max-width: 4vw;
+    max-width: 12vw;
     grid: 1/1;
+    cursor: pointer;
+    z-index: 100;
 }
 .heart_shown {
     background-image: url(images/full_heart.svg);
-    max-width: 4vw;
+    max-width: 12vw;
     background-size: cover;
 }
 @media (min-width: 800px) {
@@ -93,6 +95,14 @@ button:hover {
         display: grid;
         grid-template-columns: 2fr 1fr;
         z-index: 1;
+    }
+    .heart {
+        max-width: 4vw;
+    }
+    .heart_shown {
+        background-image: url(images/full_heart.svg);
+        max-width: 4vw;
+        background-size: cover;
     }
     nav {
         background-color: #941D1F;
