@@ -147,6 +147,7 @@ button:hover {
         font-weight: light;
     }
     .slide {
+        /*Den her animation er lavet til at få drinken til at se ud som om den slider ned af baren*/
         animation-name: slide_kf;
         animation-duration: 2s;
         animation-timing-function: ease-out;
@@ -161,6 +162,9 @@ button:hover {
         }
     }
 }
+
+/* I det her område forlod drinken bordet, opskrift boxen blev for smal så her fixer vi det*/
+
 @media(min-width: 800px) and (max-width: 1050px) {
     section article {
         /* Opskrift og cutout for grid og bliver rykket foran baggrund */
