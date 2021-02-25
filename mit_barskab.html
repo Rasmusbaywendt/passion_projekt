@@ -66,21 +66,6 @@
 
                 <h2 class="gemteOpskrifter">Dine gemte opskrifter</h2>
 
-                <nav>
-                    <div id="menu" class="hidden">
-                        <h3>Sortér efter:</h3>
-
-                        <!-- Filtreringsknapper med data attributter -->
-                        <div class="filterValg">
-                            <button data-sprit="alle" class="valgt">Alle</button>
-                            <button data-sprit="vodka">Vodka</button>
-                            <button data-sprit="whiskey">Whiskey</button>
-                            <button data-sprit="gin">Gin</button>
-                            <button data-sprit="tequila">Tequila</button>
-                        </div>
-                    </div>
-                </nav>
-
 
                 <section id="liste">
                 </section>
@@ -123,7 +108,6 @@
         // Vi deffinere en header for vores nav, så vi kan udskrive tekst i den senere
         // Vi angiver de informationer vi skal brug for at hive
         //info ned fra Restdb som konstanter
-        const header = document.querySelector("main h1");
         const medieurl = "https://drinks-3b7b.restdb.io/media/";
         const myHeaders = {
 
@@ -135,16 +119,16 @@
 
         // Vi laver variablen drink som vi vil kalde vores JSON info når vi får hentet det ned og logger derefter id'et i console
         let drinks;
-        let filter = "alle";
+        let filter = "gemte";
 
         // første funktion der kaldes efter DOM er loaded
         // Deffinere filterknapper og tilføjer eventlistener
         function start() {
 
             // Vi deffinere vores filterknapper
-            const filterKnapper = document.querySelectorAll("nav button");
             // Hver knap giver vi en eventlistener, samt kalder function loadJSON
-            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));
+            /*
+                        filterKnapper.forEach(knap => knap.addEventListener("click", filtrerDrinks));*/
             loadJSON();
         }
 
@@ -164,63 +148,49 @@
         }
 
 
-        // Bliver kaldt når en filterknap klikkes på
-        // filtrerer drinks efter data-sprit attribut og tilføjer class valgt
-        function filtrerDrinks() {
-            // Giver filter værdi/navn ud fra data-sprit attribut i html filter-nav
-            filter = this.dataset.sprit; //sætter variable ''filter'' efter data-sprit og console logger filter
-            console.log(filter);
-
-            // Fjerner class valgt, for efter at place valgt på den valgte filterknap
-            document.querySelector(".valgt").classList.remove("valgt");
-            this.classList.add("valgt");
-
-            // Kalder function visDrink
-            visDrinks();
-            // Udskriver filterknap-indhold i header(h1)
-            header.textContent = this.textContent;
-
-        }
-
 
         // Udksriver JSON data ud i template html-element
         // Udskriver for hver drink
         function visDrinks() {
 
             // container til articles med en drinks
-            const dest = document.querySelector("#liste");
-
+            const destination = document.querySelector("#liste");
             // Deffinere html skabelon (article)
             const skabelon = document.querySelector("template").content;
 
             //Ryder container inden nyt loop
-            dest.textContent = "";
+            destination.textContent = "";
 
+            //Genererer et nyt array af tilfældige objekter fra det komplette array
+            const gemt1 = drinks[Math.floor(Math.random() * drinks.length)]
+            const gemt2 = drinks[Math.floor(Math.random() * drinks.length)]
+            const gemt3 = drinks[Math.floor(Math.random() * drinks.length)]
+            const gemt4 = drinks[Math.floor(Math.random() * drinks.length)]
+            const randomDrink = [gemt1, gemt2, gemt3, gemt4];
+            console.log(randomDrink);
 
             // For hver drink:
-            drinks.forEach(drink => {
+            randomDrink.forEach(drink => {
 
                 // If-sætning bestemmer Hvad den skal filtrere efter. Eller om den skal filtrere
-                if (filter == drink.sprit || filter == "alle") {
 
 
-                    // loop igennem JSON (drinks)
-                    // Kloner skabalon og udskriver indhold til de foskellige html elementer
-                    const klon = skabelon.cloneNode(true);
-                    klon.querySelector(".navn").textContent = drink.navn;
-                    klon.querySelector(".ingredienser").textContent = `${drink.keywords}`;
-                    // Til billed bruger vi medie URL'en
-                    // 0 betyder at kan skal tage fra nr 0 i arrey'et. et arrey starter pr default fra 0
-                    klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
-                    klon.querySelector(".drinkBillede").alt = drink.billeder;
+                // loop igennem JSON (drinks)
+                // Kloner skabalon og udskriver indhold til de foskellige html elementer
+                const klon = skabelon.cloneNode(true);
+                klon.querySelector(".navn").textContent = drink.navn;
+                klon.querySelector(".ingredienser").textContent = `${drink.keywords}`;
+                // Til billed bruger vi medie URL'en
+                // 0 betyder at kan skal tage fra nr 0 i arrey'et. et arrey starter pr default fra 0
+                klon.querySelector(".drinkBillede").src = medieurl + drink.billeder[0];
+                klon.querySelector(".drinkBillede").alt = drink.billeder;
 
-                    // Ved click kalder function visDetaljer
-                    klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
+                // Ved click kalder function visDetaljer
+                klon.querySelector(".drink").addEventListener("click", () => visDetaljer(drink));
 
-                    //???????????????????????????????
-                    dest.appendChild(klon);
+                // Kloner i div'en #liste
+                destination.appendChild(klon);
 
-                }
             })
 
         }
