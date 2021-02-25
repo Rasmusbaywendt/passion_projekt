@@ -11,7 +11,7 @@ header {}
 .parallax_container {
     overflow: hidden;
     background-color: #10293F;
-    box-shadow: 1px 6px 10px 4px #10293F;
+    box-shadow: 1px 3px 12px 4px #10293F;
     margin-bottom: 8vh;
 }
 
@@ -22,7 +22,7 @@ header {}
     height: 52vh;
     /*fastgør billedet så det ikke følger med på siden, når der scrolles*/
     background-attachment: fixed;
-    background-position: 0 -240px;
+    background-position: 0;
     /*bestemmer, at baggrundsbilledet ikke skal gentages*/
     background-repeat: no-repeat;
     /*Så man kan se hele billedet*/
