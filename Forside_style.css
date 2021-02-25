@@ -1,13 +1,16 @@
 /*Desktop*/
 
-body {
-    background-color: rgb(148, 29, 29);
-}
+
+/*ligger "plantegnings streger oven på baggrundsfarven. Derudover får den baggrunden til at tilpasse sig skærmen*/
+
 .baggrund {
     background-image: url(images/streger_body.png);
     background-position: center;
     background-size: cover;
 }
+
+/*Styling af knappen på forsiden*/
+
 button {
     color: black;
     width: auto;
@@ -20,19 +23,31 @@ button {
     padding: 8px 15px;
     transition: 0.3s;
 }
+
+/*Giver hover til knappen*/
+
 main button:hover {
     background: white;
     transform: scale(1.1);
 }
+
+/*Styling af teksten i knappen*/
+
 button a {
     color: black;
     text-decoration: none;
 }
+
+/*Giver wrapper grid regler og centrerer indhold*/
+
 .splash_wrapper {
     display: grid;
     justify-content: center;
     padding-bottom: 15vw;
 }
+
+/*Styling af H1 da den stikker ud fra de andre H1 vi bruger*/
+
 .splash_wrapper h1 {
     grid-area: 1/1;
     place-self: center;
@@ -41,6 +56,9 @@ button a {
     color: #ffbc00;
     padding: 8vw;
 }
+
+/*Regler for button inde i wrapper*/
+
 .splash_wrapper button {
     grid-area: 1/1;
     place-self: center;
@@ -50,11 +68,7 @@ button a {
     margin-top: 0;
 }
 @media (max-width: 900px) {
-    .splash_wrapper img {
-        grid-area: 1/1;
-        place-self: center;
-        width: 180%;
-    }
+    /*Regler for mobil*/
     .splash_wrapper {
         padding: 50vw;
     }
